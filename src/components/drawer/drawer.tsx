@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
-import { IconButtonStyled, ListStyled } from "../shared-styled";
-import NavListItem from "../nav-list-item/nav-list-item";
-import NavigationSelect from "../navigation-select/navigation-select";
-import { DrawerStyled } from "./drawer-styled";
-import { DrawerHeaderStyled } from "./drawer-header-styled";
-import { Page } from "../../interfaces";
-import { CreatorSVG } from "components/CreatorSVG/CreatorSVG";
+import { Page } from "interfaces/pageInterface";
+import { CreatorSVG } from "components/сreatorSVG/CreatorSVG";
+import { DrawerStyled } from "./DrawerStyled";
+import { DrawerHeaderStyled } from "./DrawerHeaderStyled";
+import { ListStyled, IconButtonStyled } from "components/reusable";
+
+import NavListItem from "../navListItem/NavListItem";
 
 type Props = {
   pages: Page[];
@@ -33,7 +33,7 @@ export const Drawer: React.FC<Props> = ({ open, onClose, pages }) => {
   return (
     <DrawerStyled variant="permanent" open={open}>
       <DrawerHeaderStyled sx={styles.header}>
-        {open && <CreatorSVG iconName={"Logo"} />}
+        {open && <CreatorSVG iconName={"Logout"} />}
         <IconButtonStyled
           onClick={onClose}
           width={24}
@@ -45,12 +45,12 @@ export const Drawer: React.FC<Props> = ({ open, onClose, pages }) => {
       </DrawerHeaderStyled>
       <ListStyled marginbottom={60}>
         {pages.map((page) => (
-          <Link to={page.path} key={page.id} style={styles.link}>
+          <Link to={page.path} key={page.name} style={styles.link}>
             <NavListItem page={page} open={open} />
           </Link>
         ))}
       </ListStyled>
-      <NavigationSelect open={open} />
+      {/* здесь был navigationselect */}
     </DrawerStyled>
   );
 };

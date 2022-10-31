@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-
 import { HomePage } from "modules/dashboard/HomePage";
 import { LoginPage } from "./modules/auth/login/LoginPage";
 import { RegisterPage } from "modules/auth/registration/RegisterPage";
@@ -14,6 +13,7 @@ import { AuthProvider, UserProvider } from "routes/AuthProvider";
 import { RegisterLayout } from "components/layouts/RegisterLayout";
 import { ResetLayout } from "components/layouts/ResetLayout";
 import "assets/styles/App.css";
+import AppLayout from "components/layouts/AppLayout";
 
 export function App() {
   return (
@@ -34,10 +34,17 @@ export function App() {
           <Route path="/terms" element={<TermsConditionsPage />} />
         </Route>
         <Route element={<AuthProvider />}>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<AppLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="processi" element={<HomePage />} />
+          </Route>
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
   );
+}
+
+{
+  /* <Route path="/" element={<HomePage />} /> */
 }
