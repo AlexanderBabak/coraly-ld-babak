@@ -1,11 +1,9 @@
-import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { RegisterCompleteForm } from "./components/RegisterCompleteForm";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { StyledSnackbar } from "components/reusable";
 import { useTheme } from "@mui/material";
-import { RegisterCompleteParams } from "api/auth/authDto";
 import { CompleteSubmitProps } from "interfaces/submitProps";
 
 export const RegisterCompletePage = () => {
@@ -14,12 +12,6 @@ export const RegisterCompletePage = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const { palette } = useTheme();
-
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm<RegisterCompleteParams>();
 
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
@@ -50,12 +42,7 @@ export const RegisterCompletePage = () => {
 
   return (
     <>
-      <RegisterCompleteForm
-        handleSubmit={handleSubmit}
-        onSubmit={onSubmit}
-        errors={errors}
-        register={register}
-      />
+      <RegisterCompleteForm onSubmit={onSubmit} />
 
       {errorLogin ? (
         <StyledSnackbar

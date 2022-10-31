@@ -2,26 +2,20 @@ import { Box } from "@mui/material";
 import { StyledInput, StyledButton } from "components/reusable";
 import { AuthTitle } from "components/AuthTitle";
 import { RegisterCompleteParams } from "api/auth/authDto";
-import {
-  FieldErrors,
-  UseFormHandleSubmit,
-  UseFormRegister,
-} from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { CompleteSubmitProps } from "interfaces/submitProps";
 
 interface FormProps {
-  register: UseFormRegister<RegisterCompleteParams>;
-  handleSubmit: UseFormHandleSubmit<RegisterCompleteParams>;
-  errors: FieldErrors<RegisterCompleteParams>;
   onSubmit: CompleteSubmitProps;
 }
 
-export const RegisterCompleteForm = ({
-  handleSubmit,
-  onSubmit,
-  errors,
-  register,
-}: FormProps) => {
+export const RegisterCompleteForm = ({ onSubmit }: FormProps) => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<RegisterCompleteParams>();
+
   return (
     <Box display="flex" flexDirection="column">
       <AuthTitle
