@@ -12,14 +12,13 @@ export const RegisterCompletePage = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const { palette } = useTheme();
+  const navigate = useNavigate();
 
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
   };
 
-  const navigate = useNavigate();
-  // const email = localStorage.getItem("userEmail");
-  const email = "bbkshow1987@gmail.com";
+  const email = localStorage.getItem("userEmail");
 
   const onSubmit: CompleteSubmitProps = ({ password }) => {
     const auth = getAuth();
@@ -27,7 +26,6 @@ export const RegisterCompletePage = () => {
       .then(() => {
         setErrorlogin(false);
         setOpenSnackbar(true);
-
         setTimeout(() => {
           navigate("/");
         }, 2000);
@@ -36,8 +34,7 @@ export const RegisterCompletePage = () => {
         setErrorMessage(err.message);
         setErrorlogin(true);
         setOpenSnackbar(true);
-      })
-      .finally(); // снимаю лоадер
+      });
   };
 
   return (

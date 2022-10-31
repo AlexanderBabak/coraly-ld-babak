@@ -13,12 +13,10 @@ export const RegisterPage = () => {
 
   const onSubmit: RegisterSubmitProps = ({ email }) => {
     const auth = getAuth();
-    sendSignInLinkToEmail(auth, email, actionCodeSettings)
-      .then(() => {
-        localStorage.setItem("userEmail", email);
-        navigate("/register/email-sent");
-      })
-      .finally(); // снимаю лоадер
+    sendSignInLinkToEmail(auth, email, actionCodeSettings).then(() => {
+      localStorage.setItem("userEmail", email);
+      navigate("/register/email-sent");
+    });
   };
 
   return <RegisterForm onSubmit={onSubmit} />;

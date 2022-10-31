@@ -17,6 +17,7 @@ export const LoginPage = () => {
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const { palette } = useTheme();
 
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
@@ -38,8 +39,6 @@ export const LoginPage = () => {
         setOpenSnackbar(true);
       });
   };
-
-  const { palette } = useTheme();
 
   return (
     <LoginLayout banner={BannerLogin} maxWidth={"320px"}>
