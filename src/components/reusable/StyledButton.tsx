@@ -1,10 +1,8 @@
+import React from "react";
 import { styled, Button } from "@mui/material";
-import { ButtonProps } from "@mui/material/Button";
 import { CSSObject } from "@mui/material/styles";
 
-interface StyledButtonProps extends ButtonProps {}
-
-const ButtonStyle = styled(Button)<StyledButtonProps>(({ theme }) => {
+const ButtonStyle = styled(Button)(({ theme }): CSSObject => {
   return {
     textTransform: "none",
     borderRadius: "8px",
@@ -14,9 +12,50 @@ const ButtonStyle = styled(Button)<StyledButtonProps>(({ theme }) => {
     lineHeight: "18px",
     padding: "0px 12px",
   };
-}) as typeof Button;
+});
 
-export function StyledButton({
+type Props = {
+  text: string;
+  color?:
+    | "inherit"
+    | "info"
+    | "error"
+    | "success"
+    | "primary"
+    | "secondary"
+    | "warning"
+    | undefined;
+  variant?: "text" | "outlined" | "contained" | undefined;
+  type?: "button" | "submit" | "reset" | undefined;
+  fullWidth?: boolean;
+  onClick?: () => void;
+};
+
+export const StyledButton: React.FC<Props> = ({
+  text,
+  color = "info",
+  variant = "contained",
+  type = "submit",
+  fullWidth = true,
+  onClick,
+  ...restProps
+}) => {
+  return (
+    <ButtonStyle
+      type={type}
+      fullWidth={fullWidth}
+      color={color}
+      variant={variant}
+      onClick={onClick}
+      {...restProps}
+    >
+      {text}
+    </ButtonStyle>
+  );
+};
+
+/*
+export function StyledButton: React.FC<Props> ({
   text,
   color = "info",
   variant = "contained",
@@ -36,3 +75,4 @@ export function StyledButton({
     </ButtonStyle>
   );
 }
+*/

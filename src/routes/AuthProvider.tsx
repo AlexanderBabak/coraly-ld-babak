@@ -1,8 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 
-const isAuth = true;
-
 export const AuthProvider = () => {
   const isAuth = localStorage.getItem("user");
 

@@ -1,11 +1,12 @@
 import { Box } from "@mui/system";
 import { StyledBox } from "components/reusable";
 import { Logo } from "assets/Logo";
+import { ReactNode } from "react";
 
 type Props = {
   banner: string;
   maxWidth: string;
-  children: JSX.Element;
+  children: ReactNode;
 };
 
 export const LoginLayout: React.FC<Props> = ({

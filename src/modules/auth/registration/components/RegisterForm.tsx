@@ -1,5 +1,10 @@
 import { Box } from "@mui/material";
 import {
+  FieldErrors,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
+import {
   StyledInput,
   StyledCheckbox,
   StyledTypography,
@@ -8,10 +13,22 @@ import {
 } from "components/reusable";
 import { AuthNavigation } from "components/navigation/AuthNavigation";
 import { AuthTitle } from "components/AuthTitle";
+import { RegisterParams } from "api/auth/authDto";
+import { RegisterSubmitProps } from "interfaces/submitProps";
 
-// разобраться handleSubmit пример из баскета
+interface FormProps {
+  register: UseFormRegister<RegisterParams>;
+  onSubmit: RegisterSubmitProps;
+  handleSubmit: UseFormHandleSubmit<RegisterParams>;
+  errors: FieldErrors<RegisterParams>;
+}
 
-export const RegisterForm = ({ handleSubmit, onSubmit, errors, register }) => {
+export const RegisterForm = ({
+  handleSubmit,
+  onSubmit,
+  errors,
+  register,
+}: FormProps) => {
   return (
     <Box display="flex" flexDirection="column">
       <AuthTitle

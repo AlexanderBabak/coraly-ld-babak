@@ -1,17 +1,17 @@
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { StyledButton } from "components/reusable";
 import { useEffect } from "react";
 import { getUserThunk } from "modules/auth/authorizationAction";
 import { signOut } from "modules/auth/authorizationSlice";
+import { useAppDispatch } from "redux/reduxType";
 
 export const HomePage = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getUserThunk());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

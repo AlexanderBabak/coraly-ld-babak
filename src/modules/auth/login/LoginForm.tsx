@@ -1,4 +1,12 @@
 import { Box, useTheme } from "@mui/material";
+import { AuthNavigation } from "components/navigation/AuthNavigation";
+import { AuthTitle } from "components/AuthTitle";
+import { LoginParams } from "api/auth/authDto";
+import {
+  FieldErrors,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
 import {
   StyledInput,
   StyledCheckbox,
@@ -6,11 +14,22 @@ import {
   StyledButton,
   StyledLink,
 } from "components/reusable";
-import { AuthNavigation } from "components/navigation/AuthNavigation";
-import { AuthTitle } from "components/AuthTitle";
+import { LoginSubmitProps } from "interfaces/submitProps";
 
-export const LoginForm = ({ handleSubmit, onSubmit, errors, register }) => {
-  const { palette, typography } = useTheme();
+interface FormProps {
+  register: UseFormRegister<LoginParams>;
+  handleSubmit: UseFormHandleSubmit<LoginParams>;
+  errors: FieldErrors<LoginParams>;
+  onSubmit: LoginSubmitProps;
+}
+
+export const LoginForm = ({
+  handleSubmit,
+  onSubmit,
+  errors,
+  register,
+}: FormProps) => {
+  const { typography } = useTheme();
 
   return (
     <Box display="flex" flexDirection="column">
@@ -61,10 +80,7 @@ export const LoginForm = ({ handleSubmit, onSubmit, errors, register }) => {
             alignItems="center"
           >
             <StyledCheckbox />
-            <StyledTypography
-              fontSize={typography.fontSize}
-              color={palette.text.main}
-            >
+            <StyledTypography fontSize={typography.fontSize} color={"#464356"}>
               Remember me
             </StyledTypography>
           </Box>

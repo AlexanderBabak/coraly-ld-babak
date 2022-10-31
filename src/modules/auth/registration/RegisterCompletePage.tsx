@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { RegisterCompleteForm } from "./components/RegisterCompleteForm";
-import { setUser } from "Trash/redux first/store/slices/userSlice";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { StyledSnackbar } from "components/reusable";
 import { useTheme } from "@mui/material";
+import { RegisterCompleteParams } from "api/auth/authDto";
+import { CompleteSubmitProps } from "interfaces/submitProps";
 
 export const RegisterCompletePage = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -19,39 +19,23 @@ export const RegisterCompletePage = () => {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+  } = useForm<RegisterCompleteParams>();
 
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
   };
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  // const email = localStorage.getItem("userEmail");
+  const email = "bbkshow1987@gmail.com";
 
-  const { email, workspaceName } = JSON.parse(localStorage.getItem("user"));
-
-  const onSubmit = ({ name, surname, password }) => {
-    console.log(name, password, surname, email, workspaceName);
-
+  const onSubmit: CompleteSubmitProps = ({ password }) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
-      .then(({ user }) => {
+      .then(() => {
         setErrorlogin(false);
         setOpenSnackbar(true);
-        localStorage.setItem(
-          "userData",
-          JSON.stringify({ name, surname, workspaceName })
-        );
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.accessToken,
-            name,
-            surname,
-            workspaceName,
-          })
-        );
+
         setTimeout(() => {
           navigate("/");
         }, 2000);

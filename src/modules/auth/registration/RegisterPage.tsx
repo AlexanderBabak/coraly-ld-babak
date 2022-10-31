@@ -1,8 +1,9 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { getAuth, sendSignInLinkToEmail } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { RegisterForm } from "./components/RegisterForm";
+import { RegisterParams } from "api/auth/authDto";
+import { RegisterSubmitProps } from "interfaces/submitProps";
 
 const actionCodeSettings = {
   url: "http://localhost:3000/register/complete",
@@ -16,13 +17,13 @@ export const RegisterPage = () => {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+  } = useForm<RegisterParams>();
 
-  const onSubmit = ({ workspaceName, email }) => {
+  const onSubmit: RegisterSubmitProps = ({ email }) => {
     const auth = getAuth();
     sendSignInLinkToEmail(auth, email, actionCodeSettings)
       .then(() => {
-        localStorage.setItem("user", JSON.stringify({ email, workspaceName }));
+        localStorage.setItem("userEmail", email);
         navigate("/register/email-sent");
       })
       .finally(); // снимаю лоадер
