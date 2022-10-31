@@ -61,28 +61,3 @@ export const StyledInput: React.FC<Props> = ({
     />
   );
 };
-
-/*
-export function StyledInput({
-  type = "text",
-  size = "small",
-  helperText = " ",
-  fullWidth = true,
-  color = "info",
-  validation,
-  ...restProps
-}) {
-  return (
-    <Input
-      type={type}
-      size={size}
-      color={color}
-      fullWidth={fullWidth}
-      helperText={helperText}
-      {...restProps}
-      {...validation}
-    />
-  );
-}
-
-*/

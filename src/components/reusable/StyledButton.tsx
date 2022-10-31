@@ -53,26 +53,3 @@ export const StyledButton: React.FC<Props> = ({
     </ButtonStyle>
   );
 };
-
-/*
-export function StyledButton: React.FC<Props> ({
-  text,
-  color = "info",
-  variant = "contained",
-  type = "submit",
-  fullWidth = true,
-  ...restProps
-}) {
-  return (
-    <ButtonStyle
-      type={type}
-      fullWidth={fullWidth}
-      color={color}
-      variant={variant}
-      {...restProps}
-    >
-      {text}
-    </ButtonStyle>
-  );
-}
-*/
