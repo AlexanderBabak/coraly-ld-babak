@@ -1,6 +1,7 @@
-import { TextField, styled } from "@mui/material";
+import React from "react";
+import { TextField, styled, CSSObject } from "@mui/material";
 
-const Input = styled(TextField)(({ theme }) => {
+const Input = styled(TextField)(({ theme }): CSSObject => {
   return {
     "& label.Mui-focused": {
       fontWeight: theme.typography.fontWeightBold,
@@ -21,6 +22,47 @@ const Input = styled(TextField)(({ theme }) => {
   };
 });
 
+type Props = {
+  type?: string;
+  size?: "small" | "medium" | undefined;
+  helperText: string | undefined;
+  fullWidth?: boolean;
+  color?:
+    | "error"
+    | "info"
+    | "primary"
+    | "secondary"
+    | "success"
+    | "warning"
+    | undefined;
+  validation?: any;
+  label: string;
+  error: boolean | undefined;
+};
+
+export const StyledInput: React.FC<Props> = ({
+  type = "text",
+  size = "small",
+  helperText = " ",
+  fullWidth = true,
+  color = "info",
+  validation,
+  ...restProps
+}) => {
+  return (
+    <Input
+      type={type}
+      size={size}
+      color={color}
+      fullWidth={fullWidth}
+      helperText={helperText}
+      {...restProps}
+      {...validation}
+    />
+  );
+};
+
+/*
 export function StyledInput({
   type = "text",
   size = "small",
@@ -42,3 +84,5 @@ export function StyledInput({
     />
   );
 }
+
+*/

@@ -4,31 +4,34 @@ import { CircularProgress, useTheme } from "@mui/material";
 import { LoginForm } from "./LoginForm";
 import { LoginLayout } from "components/layouts/LoginLayout";
 import { StyledSnackbar } from "components/reusable";
-import BannerLogin from "assets/BannerLogin.png";
 import { useNavigate } from "react-router";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "redux/reduxType";
 import { getUserThunk } from "../authorizationAction";
+import { LoginParams } from "api/auth/authDto";
+import { LoginSubmitProps } from "interfaces/submitProps";
+import BannerLogin from "assets/BannerLogin.png";
 
 export const LoginPage = () => {
   const [errorLogin, setErrorlogin] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  const { loadingAuth } = useSelector((state) => state.auth);
+  const { loadingAuth } = useAppSelector((state) => state.auth);
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
   };
 
+  // Это может в форму отправить?
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+  } = useForm<LoginParams>();
 
-  const onSubmit = ({ email, password }) => {
+  const onSubmit: LoginSubmitProps = ({ email, password }) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {

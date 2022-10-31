@@ -1,6 +1,6 @@
 export const BASE_URL = "http://localhost:3004/";
 
-const request = async (url, data, token) => {
+const request = async (url: string, data: any, token: string | undefined) => {
   const headersToken = token ? { Authorization: `Bearer ${token}` } : {};
   const headersMultiPart =
     typeof data.body === "string"
@@ -38,14 +38,14 @@ const request = async (url, data, token) => {
   }
 };
 
-export const get = (url, token) =>
+export const get = (url: string, token?: string) =>
   request(`${BASE_URL}${url}`, { method: "GET" }, token);
 
-export const post = (url, body, token) => {
+export const post = (url: string, body: string | FormData, token?: string) => {
   return request(`${BASE_URL}${url}`, { method: "POST", body }, token);
 };
-export const put = (url, body, token) => {
+export const put = (url: string, body: string, token: string) => {
   return request(`${BASE_URL}${url}`, { method: "PUT", body }, token);
 };
-export const remove = (url, token) =>
+export const remove = (url: string, token: string) =>
   request(`${BASE_URL}${url}`, { method: "DELETE" }, token);

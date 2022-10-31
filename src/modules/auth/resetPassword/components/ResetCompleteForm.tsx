@@ -1,13 +1,26 @@
 import { Box } from "@mui/material";
+import { ResetParams } from "api/auth/authDto";
 import { AuthTitle } from "components/AuthTitle";
 import { StyledInput, StyledButton } from "components/reusable";
+import {
+  FieldErrors,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
+
+interface FormProps {
+  register: UseFormRegister<ResetParams>;
+  handleSubmit: UseFormHandleSubmit<ResetParams>;
+  errors: FieldErrors<ResetParams>;
+  onSubmit: () => void;
+}
 
 export const ResetCompleteForm = ({
   handleSubmit,
   onSubmit,
   errors,
   register,
-}) => {
+}: FormProps) => {
   return (
     <Box display="flex" flexDirection="column">
       <AuthTitle
@@ -44,7 +57,6 @@ export const ResetCompleteForm = ({
               minLength: {
                 value: 6,
                 message: "Minimum 6 characters",
-                // добавить что паспорт не совпадает
               },
             }),
           }}

@@ -1,15 +1,27 @@
 import { Box } from "@mui/material";
 import { StyledInput, StyledButton } from "components/reusable";
 import { AuthTitle } from "components/AuthTitle";
+import { RegisterCompleteParams } from "api/auth/authDto";
+import {
+  FieldErrors,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
+import { CompleteSubmitProps } from "interfaces/submitProps";
 
-// разобраться handleSubmit пример из баскета
+interface FormProps {
+  register: UseFormRegister<RegisterCompleteParams>;
+  handleSubmit: UseFormHandleSubmit<RegisterCompleteParams>;
+  errors: FieldErrors<RegisterCompleteParams>;
+  onSubmit: CompleteSubmitProps;
+}
 
 export const RegisterCompleteForm = ({
   handleSubmit,
   onSubmit,
   errors,
   register,
-}) => {
+}: FormProps) => {
   return (
     <Box display="flex" flexDirection="column">
       <AuthTitle
@@ -77,7 +89,6 @@ export const RegisterCompleteForm = ({
               minLength: {
                 value: 6,
                 message: "Minimum 6 characters",
-                // добавить что паспорт не совпадает
               },
             }),
           }}

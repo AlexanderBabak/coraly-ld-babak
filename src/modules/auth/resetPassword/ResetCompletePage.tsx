@@ -1,3 +1,4 @@
+import { ResetParams } from "api/auth/authDto";
 import { useForm } from "react-hook-form";
 import { ResetCompleteForm } from "./components/ResetCompleteForm";
 
@@ -6,13 +7,9 @@ export const ResetCompletePage = () => {
     register,
     formState: { errors },
     handleSubmit,
-    reset,
-  } = useForm();
+  } = useForm<ResetParams>();
 
-  const onSubmit = ({ name, password }) => {
-    console.log(name, password);
-    reset();
-  };
+  const onSubmit = () => {};
   return (
     <ResetCompleteForm
       handleSubmit={handleSubmit}

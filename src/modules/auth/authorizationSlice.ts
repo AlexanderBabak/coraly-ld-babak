@@ -1,7 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getUserThunk } from "./authorizationAction";
+import { IUserResponse } from "api/auth/authDto";
 
-const initialState = {
+interface IAuth {
+  user: IUserResponse | null;
+  loadingAuth: boolean;
+  errorAuth: string | undefined;
+}
+
+const initialState: IAuth = {
   user: JSON.parse(`${localStorage.getItem("user")}`) || null,
   loadingAuth: false,
   errorAuth: "",
