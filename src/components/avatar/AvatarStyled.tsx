@@ -10,12 +10,13 @@ interface AvatarProps extends MuiAvatarProps {
 }
 
 export const AvatarStyled = styled(Avatar)<AvatarProps>(
-  ({ bgcolor, bordercolor, marginright }): CSSObject => ({
+  ({ bgcolor, bordercolor, marginright, marginleft }): CSSObject => ({
     backgroundColor: bgcolor,
     border: "1px solid",
     borderRadius: "8px",
     borderColor: bordercolor,
     marginRight: marginright,
+    marginLeft: marginleft,
     fontSize: 16,
     fontWeight: 600,
   })

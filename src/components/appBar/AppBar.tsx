@@ -28,15 +28,15 @@ export const AppBar: React.FC<Props> = ({ open }) => {
       <Container maxWidth="xl" disableGutters>
         <Toolbar>
           <CustomSeparator activePageName={activePageName} />
-          <Stack direction="row" alignItems="center" gap={2}>
+          <Stack direction="row" alignItems="center" gap={1}>
             <IconButton aria-label="notification">
               <NotificationsOutlinedIcon />
             </IconButton>
-
             <ShortcutIcon />
             <AvatarStyled
               bgcolor={palette.secondary.light}
               bordercolor={palette.secondary.main}
+              marginleft={10}
             >
               {getFirstChairs(userName)}
             </AvatarStyled>

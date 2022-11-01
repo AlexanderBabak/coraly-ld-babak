@@ -50,7 +50,7 @@ export const pages = [
   {
     name: "logout",
     displayName: "Logout",
-    path: "/logout",
+    path: "/login",
     iconName: "Logout",
   },
 ];

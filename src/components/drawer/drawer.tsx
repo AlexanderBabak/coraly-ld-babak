@@ -85,7 +85,7 @@ export const Drawer: React.FC<Props> = ({ open, onClose, pages }) => {
         )}
       </StyledBox>
 
-      <ListStyled sx={styles.list}>
+      <ListStyled sx={styles.list} onClick={() => {}}>
         {pages.map((page) => (
           <Link to={page.path} key={page.name} style={styles.link}>
             <NavListItem page={page} open={open} />

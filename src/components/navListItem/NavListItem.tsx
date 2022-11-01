@@ -9,6 +9,7 @@ import { Page } from "interfaces/pageInterface";
 import ListItemButtonStyled from "./ListItemButtonStyled";
 import { useAppSelector, useAppDispatch } from "redux/reduxType";
 import { setActivePage } from "modules/pages/pagesSlice";
+import { signOut } from "modules/auth/authorizationSlice";
 
 type Props = {
   page: Page;
@@ -35,6 +36,7 @@ const NavListItem: React.FC<Props> = ({ page, open }) => {
 
   useEffect(() => {
     checkIsPageActive(activePageName);
+    // checkIsPageLogout(activePageName);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activePageName]);
 
@@ -43,6 +45,12 @@ const NavListItem: React.FC<Props> = ({ page, open }) => {
       setIsActive(true);
     } else {
       setIsActive(false);
+    }
+  };
+
+  const checkIsPageLogout = (pageName: Page["displayName"] | null): void => {
+    if (activePageName === "Logout") {
+      dispatch(signOut());
     }
   };
 
