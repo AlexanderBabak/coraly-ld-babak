@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { Outlet } from "react-router";
 import { StyledBox } from "components/reusable";
-import { Logo } from "assets/Logo";
+import { Logo } from "assets/icons/Logo";
 import BannerRegister from "assets/BannerRegister.png";
 
 export const RegisterLayout = () => {

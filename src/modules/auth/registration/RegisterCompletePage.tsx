@@ -1,11 +1,9 @@
-import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { RegisterCompleteForm } from "./components/RegisterCompleteForm";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { StyledSnackbar } from "components/reusable";
 import { useTheme } from "@mui/material";
-import { RegisterCompleteParams } from "api/auth/authDto";
 import { CompleteSubmitProps } from "interfaces/submitProps";
 
 export const RegisterCompletePage = () => {
@@ -14,20 +12,13 @@ export const RegisterCompletePage = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const { palette } = useTheme();
-
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm<RegisterCompleteParams>();
+  const navigate = useNavigate();
 
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
   };
 
-  const navigate = useNavigate();
-  // const email = localStorage.getItem("userEmail");
-  const email = "bbkshow1987@gmail.com";
+  const email = localStorage.getItem("userEmail");
 
   const onSubmit: CompleteSubmitProps = ({ password }) => {
     const auth = getAuth();
@@ -35,7 +26,6 @@ export const RegisterCompletePage = () => {
       .then(() => {
         setErrorlogin(false);
         setOpenSnackbar(true);
-
         setTimeout(() => {
           navigate("/");
         }, 2000);
@@ -44,18 +34,12 @@ export const RegisterCompletePage = () => {
         setErrorMessage(err.message);
         setErrorlogin(true);
         setOpenSnackbar(true);
-      })
-      .finally(); // снимаю лоадер
+      });
   };
 
   return (
     <>
-      <RegisterCompleteForm
-        handleSubmit={handleSubmit}
-        onSubmit={onSubmit}
-        errors={errors}
-        register={register}
-      />
+      <RegisterCompleteForm onSubmit={onSubmit} />
 
       {errorLogin ? (
         <StyledSnackbar

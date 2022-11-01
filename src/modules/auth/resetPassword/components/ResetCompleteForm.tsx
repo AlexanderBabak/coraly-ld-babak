@@ -1,26 +1,20 @@
 import { Box } from "@mui/material";
 import { ResetParams } from "api/auth/authDto";
+import { useForm } from "react-hook-form";
 import { AuthTitle } from "components/AuthTitle";
 import { StyledInput, StyledButton } from "components/reusable";
-import {
-  FieldErrors,
-  UseFormHandleSubmit,
-  UseFormRegister,
-} from "react-hook-form";
 
 interface FormProps {
-  register: UseFormRegister<ResetParams>;
-  handleSubmit: UseFormHandleSubmit<ResetParams>;
-  errors: FieldErrors<ResetParams>;
   onSubmit: () => void;
 }
 
-export const ResetCompleteForm = ({
-  handleSubmit,
-  onSubmit,
-  errors,
-  register,
-}: FormProps) => {
+export const ResetCompleteForm = ({ onSubmit }: FormProps) => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<ResetParams>();
+
   return (
     <Box display="flex" flexDirection="column">
       <AuthTitle

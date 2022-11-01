@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { Outlet } from "react-router";
 import { StyledBox } from "components/reusable";
-import { Logo } from "assets/Logo";
+import { Logo } from "assets/icons/Logo";
 import BannerReset from "assets/BannerReset.png";
 
 export const ResetLayout = () => {

@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 import { StyledBox } from "components/reusable";
-import { Logo } from "assets/Logo";
+import { Logo } from "assets/icons/Logo";
 import { ReactNode } from "react";
 
 type Props = {

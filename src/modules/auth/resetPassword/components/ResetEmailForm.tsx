@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { AuthTitle } from "components/AuthTitle";
-import { Frame } from "assets/Frame";
+import { Frame } from "assets/icons/Frame";
 
 export const ResetEmailForm = () => {
   return (

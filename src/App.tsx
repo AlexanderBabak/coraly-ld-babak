@@ -1,6 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-
-import { HomePage } from "modules/dashboard/HomePage";
 import { LoginPage } from "./modules/auth/login/LoginPage";
 import { RegisterPage } from "modules/auth/registration/RegisterPage";
 import { RegisterEmailPage } from "modules/auth/registration/RegisterEmailPage";
@@ -14,6 +12,8 @@ import { AuthProvider, UserProvider } from "routes/AuthProvider";
 import { RegisterLayout } from "components/layouts/RegisterLayout";
 import { ResetLayout } from "components/layouts/ResetLayout";
 import "assets/styles/App.css";
+import AppLayout from "components/layouts/AppLayout";
+import { ProcessPage } from "modules/process/ProcessPage";
 
 export function App() {
   return (
@@ -34,7 +34,10 @@ export function App() {
           <Route path="/terms" element={<TermsConditionsPage />} />
         </Route>
         <Route element={<AuthProvider />}>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<AppLayout />}>
+            <Route index element={<ProcessPage />} />
+            <Route path="processi" element={<ProcessPage />} />
+          </Route>
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

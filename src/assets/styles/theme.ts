@@ -5,12 +5,12 @@ export const theme = createTheme({
     primary: {
       main: "#F93E6C",
       dark: "#C73256",
-      light: "#E03861",
+      light: "#FC9FB6",
       contrastText: "#fff",
     },
     secondary: {
       main: "#2CCFBC",
-      light: "#28BAA9",
+      light: "#96E7DE",
       dark: "#23A696",
       contrastText: "#fff",
     },
@@ -40,7 +40,7 @@ export const theme = createTheme({
       300: "#6c7c8c",
       400: "#e5e5e5",
       500: "#f7f7f7",
-      600: "#666666",
+      600: "#fff",
     },
   },
   typography: {

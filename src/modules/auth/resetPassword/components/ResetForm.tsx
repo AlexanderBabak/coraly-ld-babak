@@ -1,27 +1,21 @@
 import { Box } from "@mui/material";
+import { useForm } from "react-hook-form";
 import { AuthNavigation } from "components/navigation/AuthNavigation";
 import { AuthTitle } from "components/AuthTitle";
 import { StyledButton, StyledInput } from "components/reusable";
 import { LoginParams } from "api/auth/authDto";
-import {
-  FieldErrors,
-  UseFormHandleSubmit,
-  UseFormRegister,
-} from "react-hook-form";
 
 interface FormProps {
-  register: UseFormRegister<LoginParams>;
-  handleSubmit: UseFormHandleSubmit<LoginParams>;
-  errors: FieldErrors<LoginParams>;
   onSubmit: () => void;
 }
 
-export const ResetForm = ({
-  handleSubmit,
-  onSubmit,
-  errors,
-  register,
-}: FormProps) => {
+export const ResetForm = ({ onSubmit }: FormProps) => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<LoginParams>();
+
   return (
     <Box display="flex" flexDirection="column">
       <AuthTitle

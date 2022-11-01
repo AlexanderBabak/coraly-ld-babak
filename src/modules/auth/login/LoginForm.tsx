@@ -1,12 +1,8 @@
 import { Box, useTheme } from "@mui/material";
 import { AuthNavigation } from "components/navigation/AuthNavigation";
 import { AuthTitle } from "components/AuthTitle";
+import { useForm } from "react-hook-form";
 import { LoginParams } from "api/auth/authDto";
-import {
-  FieldErrors,
-  UseFormHandleSubmit,
-  UseFormRegister,
-} from "react-hook-form";
 import {
   StyledInput,
   StyledCheckbox,
@@ -17,18 +13,16 @@ import {
 import { LoginSubmitProps } from "interfaces/submitProps";
 
 interface FormProps {
-  register: UseFormRegister<LoginParams>;
-  handleSubmit: UseFormHandleSubmit<LoginParams>;
-  errors: FieldErrors<LoginParams>;
   onSubmit: LoginSubmitProps;
 }
 
-export const LoginForm = ({
-  handleSubmit,
-  onSubmit,
-  errors,
-  register,
-}: FormProps) => {
+export const LoginForm = ({ onSubmit }: FormProps) => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<LoginParams>();
+
   const { typography } = useTheme();
 
   return (
