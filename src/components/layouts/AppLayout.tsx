@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { useAppSelector } from "redux/reduxType";
-import { Drawer } from "components/drawer/Drawer";
+import { Drawer } from "components/drawer/drawer";
 import { DrawerHeaderStyled } from "components/drawer/DrawerHeaderStyled";
 import { pages } from "components/drawer/pages";
 import { AppBar } from "components/appBar/AppBar";
