@@ -44,7 +44,3 @@ export function App() {
     </div>
   );
 }
-
-{
-  /* <Route path="/" element={<HomePage />} /> */
-}

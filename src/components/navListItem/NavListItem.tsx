@@ -17,43 +17,18 @@ type Props = {
 
 const NavListItem: React.FC<Props> = ({ page, open }) => {
   const styles = {
-    badge: {
-      "& .MuiBadge-badge": {
-        width: "24px",
-        height: "24px",
-        fontSize: "14px",
-        fontFamily: "Source Sans Pro, sans-serif",
-        fontWeight: 600,
-        padding: 0,
-        borderRadius: 12,
-        color: "#ffffff",
-      },
-    },
     listIcon: {
       minWidth: 0,
-      width: "20px",
-      height: "20px",
+      width: "24px",
+      height: "24px",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      ...(open && { mr: "16px" }),
-    },
-    expandedIcon: {
-      minWidth: 0,
-      width: "20px",
-      height: "20px",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      mr: "20px",
-      ...(!open && { display: "none" }),
-    },
-    link: {
-      textDecoration: "none",
+      ...(open && { mr: "12px" }),
     },
   };
 
-  const { palette } = useTheme();
+  const { palette, typography } = useTheme();
   const [isActive, setIsActive] = useState(false);
   const { activePageName } = useAppSelector((state) => state.pages);
   const dispatch = useAppDispatch();
@@ -76,26 +51,26 @@ const NavListItem: React.FC<Props> = ({ page, open }) => {
       <ListItemStyled
         disablePadding
         color={palette.primary.main}
-        marginbottom={page.name !== "logOut" ? 2 : 0}
+        marginbottom={2}
       >
         <StyledBox
-          width={3}
-          height={32}
-          bgcolor={isActive ? palette.secondary.main : "transparent"}
-          marginRight={4}
-          borderRadius={20}
-        />
-        <StyledBox
-          bgcolor={isActive ? palette.grey["500"] : "transparent"}
+          // подсветка активного айтема
+          bgcolor={isActive ? palette.grey["100"] : "transparent"}
           width={"100%"}
-          borderRadius={4}
+          borderRadius={8}
+          height={48}
         >
           <ListItemButtonStyled
             disableGutters
             disableRipple
-            paddingleft={open ? 13 : 15}
+            paddingleft={10}
             height={32}
-            color={isActive ? palette.secondary.main : palette.primary.dark}
+            color={isActive ? palette.primary.main : palette.common.white}
+            fontWeight={
+              isActive
+                ? typography.fontWeightMedium
+                : typography.fontWeightRegular
+            }
             onClick={() => {
               dispatch(setActivePage(page.displayName));
             }}
@@ -103,7 +78,7 @@ const NavListItem: React.FC<Props> = ({ page, open }) => {
             <ListItemIcon sx={styles.listIcon}>
               <CreatorSVG
                 iconName={page.iconName}
-                color={isActive ? palette.secondary.main : palette.primary.main}
+                color={isActive ? palette.primary.main : palette.common.white}
               />
             </ListItemIcon>
             {open && <ListItemText primary={page.displayName} />}

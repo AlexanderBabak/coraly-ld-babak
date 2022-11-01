@@ -11,10 +11,10 @@ export const AppBarStyled = styled(MuiAppBar, {
 })<AppBarProps>(
   ({ theme, open }): CSSObject => ({
     background: theme.palette.common.white,
-    height: 60,
-    width: `calc(100% - 72px)`,
+    boxShadow: "none",
+    width: `calc(100% - 80px)`,
     zIndex: theme.zIndex.drawer + 1,
-    borderBottom: "1px solid rgba(10, 37, 64, 0.24)",
+    borderBottom: "2px solid #D6D5D9",
     display: "flex",
     alignItems: "flex-start",
     transition: theme.transitions.create(["width", "margin"], {
@@ -22,7 +22,7 @@ export const AppBarStyled = styled(MuiAppBar, {
       duration: theme.transitions.duration.leavingScreen,
     }),
     ...(open && {
-      width: `calc(100% - 256px)`,
+      width: `calc(100% - 236px)`,
       transition: theme.transitions.create(["width", "margin"], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
@@ -30,7 +30,7 @@ export const AppBarStyled = styled(MuiAppBar, {
     }),
     "& .MuiToolbar-root": {
       minHeight: 0,
-      height: 60,
+      height: 64,
       padding: "0 36px",
       display: "flex",
       justifyContent: "space-between",

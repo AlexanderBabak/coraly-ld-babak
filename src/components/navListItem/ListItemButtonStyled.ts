@@ -1,29 +1,30 @@
-import { styled, ListItemButton } from '@mui/material';
-import { ListItemButtonProps as MuiListItemButtonProps } from '@mui/material/ListItemButton';
-import { CSSObject } from '@mui/material/styles';
+import { styled, ListItemButton } from "@mui/material";
+import { ListItemButtonProps as MuiListItemButtonProps } from "@mui/material/ListItemButton";
+import { CSSObject } from "@mui/material/styles";
 
 interface ListItemButtonProps extends MuiListItemButtonProps {
   height?: number;
   paddingleft?: number | string;
   color?: string;
+  fontWeight?: any;
 }
 
 const ListItemButtonStyled = styled(ListItemButton)<ListItemButtonProps>(
-  ({ theme, height, paddingleft, color }): CSSObject => ({
+  ({ height, paddingleft, color, fontWeight }): CSSObject => ({
     padding: 0,
     paddingLeft: paddingleft,
     height: height,
     color: color,
 
-    ':hover': {
-      backgroundColor: 'transparent'
+    ":hover": {
+      backgroundColor: "transparent",
     },
 
-    '& .MuiTypography-root': {
-      fontWeight: theme.typography.fontWeightRegular,
-      fontSize: '14px',
-      lineHeight: '16px'
-    }
+    "& .MuiTypography-root": {
+      fontWeight: fontWeight,
+      fontSize: "14px",
+      lineHeight: "18px",
+    },
   })
 );
 

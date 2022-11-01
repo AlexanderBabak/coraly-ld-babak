@@ -8,19 +8,19 @@ export const pages = [
   {
     name: "team",
     displayName: "Team",
-    path: "/team",
+    path: "/processi",
     iconName: "Team",
   },
   {
     name: "modelli",
     displayName: "Modelli",
-    path: "/modelli",
+    path: "/processi",
     iconName: "Modelli",
   },
   {
     name: "database",
     displayName: "Database",
-    path: "/database",
+    path: "/processi",
     iconName: "Database",
   },
   {
