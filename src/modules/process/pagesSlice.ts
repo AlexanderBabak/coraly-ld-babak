@@ -1,16 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Page } from "interfaces/pageInterface";
+import { ICard } from "interfaces/cardsInterface";
+import { getCardsThunk } from "modules/process/processThunk";
 
 interface pagesState {
-  loadingPages: boolean;
-  error: string | null;
+  loadingCards: boolean;
+  errorCards: string | undefined;
   activePageName: Page["displayName"] | null;
+  processCards: ICard[];
 }
 
 const initialState: pagesState = {
-  loadingPages: false,
-  error: null,
+  loadingCards: false,
+  errorCards: undefined,
   activePageName: null,
+  processCards: [],
 };
 
 export const pagesSlice = createSlice({
@@ -20,6 +24,21 @@ export const pagesSlice = createSlice({
     setActivePage(state, action) {
       state.activePageName = action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    //getCards
+    builder.addCase(getCardsThunk.pending, (state) => {
+      state.loadingCards = true;
+      state.errorCards = "";
+    });
+    builder.addCase(getCardsThunk.fulfilled, (state, action) => {
+      state.loadingCards = false;
+      state.processCards = action.payload;
+    });
+    builder.addCase(getCardsThunk.rejected, (state, action) => {
+      state.loadingCards = false;
+      state.errorCards = action.error.message;
+    });
   },
 });
 

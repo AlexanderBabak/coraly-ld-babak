@@ -15,7 +15,6 @@
       "icon": "Board",
       "backgroundColor": "#47BDFF",
       "isPrivate": false,
-      "isMenu": false,
       "id": 1
     },
     {
@@ -23,7 +22,6 @@
       "icon": "Board",
       "backgroundColor": "#FF47B5",
       "isPrivate": true,
-      "isMenu": true,
       "id": 2
     },
     {
@@ -31,7 +29,6 @@
       "icon": "Cart",
       "backgroundColor": "#FF9F47",
       "isPrivate": true,
-      "isMenu": true,
       "id": 3
     },
     {
@@ -39,7 +36,6 @@
       "icon": "Board",
       "backgroundColor": "#6C47FF",
       "isPrivate": false,
-      "isMenu": false,
       "id": 4
     },
     {
@@ -47,7 +43,6 @@
       "icon": "Board",
       "backgroundColor": "#2EF1CE",
       "isPrivate": false,
-      "isMenu": false,
       "id": 5
     },
     {
@@ -55,7 +50,6 @@
       "icon": "Board",
       "backgroundColor": "#F6D524",
       "isPrivate": false,
-      "isMenu": false,
       "id": 6
     },
     {
@@ -63,7 +57,6 @@
       "icon": "Board",
       "backgroundColor": "#E547FF",
       "isPrivate": false,
-      "isMenu": false,
       "id": 7
     },
     {
@@ -71,7 +64,6 @@
       "icon": "Board",
       "backgroundColor": "#F6D524",
       "isPrivate": false,
-      "isMenu": false,
       "id": 8
     },
     {
@@ -79,7 +71,6 @@
       "icon": "Board",
       "backgroundColor": "#E547FF",
       "isPrivate": false,
-      "isMenu": false,
       "id": 9
     }
   ]

@@ -3,14 +3,18 @@ import { useEffect } from "react";
 import { getUserThunk } from "modules/auth/authorizationAction";
 import { useAppDispatch, useAppSelector } from "redux/reduxType";
 import { Stack, useTheme, Grid } from "@mui/material";
-import { ProcessCard } from "modules/process/processCard/ProcessCard";
+import { getCardsThunk } from "./processThunk";
+import { ProcessCard } from "./processCard/ProcessCard";
 
 export const ProcessPage = () => {
   const { user } = useAppSelector((state) => state.auth);
+  const { processCards } = useAppSelector((state) => state.pages);
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(getUserThunk());
+    dispatch(getCardsThunk());
   }, [dispatch]);
 
   const { palette, typography } = useTheme();
@@ -38,18 +42,17 @@ export const ProcessPage = () => {
         </StyledTypography>
       </Stack>
       <Grid container spacing={2} marginTop={1}>
-        <Grid item>
-          <ProcessCard />
-        </Grid>
-        <Grid item>
-          <ProcessCard />
-        </Grid>
-        <Grid item>
-          <ProcessCard />
-        </Grid>
-        <Grid item>
-          <ProcessCard />
-        </Grid>
+        {processCards.map((card) => (
+          <Grid item key={card.id}>
+            <ProcessCard
+              title={card.title}
+              icon={card.icon}
+              id={card.id}
+              isPrivate={card.isPrivate}
+              backgroundColor={card.backgroundColor}
+            />
+          </Grid>
+        ))}
       </Grid>
     </>
   );

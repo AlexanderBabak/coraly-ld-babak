@@ -27,7 +27,7 @@ const AppLayout = () => {
 
   const [open, setOpen] = useState(false);
 
-  const { loadingPages, error, activePageName } = useAppSelector(
+  const { loadingCards, errorCards, activePageName } = useAppSelector(
     (state) => state.pages
   );
 

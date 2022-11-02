@@ -6,20 +6,14 @@ export interface IUserResponse {
   workspaceName: string;
 }
 
-export interface LoginParams {
-  email: string;
-  password: string;
-}
+export interface LoginParams
+  extends Pick<IUserResponse, "email" | "password"> {}
 
-export interface RegisterParams {
-  workspaceName: string;
-  email: string;
-}
+export interface RegisterParams
+  extends Pick<IUserResponse, "email" | "workspaceName"> {}
 
-export interface RegisterCompleteParams {
-  name: string;
-  surname: string;
-  password: string;
+export interface RegisterCompleteParams
+  extends Pick<IUserResponse, "name" | "password" | "surname"> {
   repeatPassword: string;
 }
 

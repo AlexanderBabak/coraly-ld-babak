@@ -7,22 +7,33 @@ import { CreatorSVG } from "components/сreatorSVG/CreatorSVG";
 import { StyledTypography } from "components/reusable";
 import { useTheme } from "@mui/material";
 import Tooltip from "@mui/material/Tooltip";
+import { ICard } from "interfaces/cardsInterface";
 
-const isPrivate = true;
-
-export const ProcessCard = () => {
+export const ProcessCard: React.FC<ICard> = ({
+  isPrivate,
+  icon,
+  id,
+  title,
+  backgroundColor,
+}) => {
   const { palette, typography } = useTheme();
 
   return (
-    <Tooltip title="This is a private process " arrow placement="top-start">
+    <Tooltip
+      title="This is a private process "
+      arrow
+      placement="top-start"
+      disableHoverListener={!isPrivate}
+    >
       <Card
         sx={{
           width: 150,
           height: 150,
-          backgroundColor: "#47BDFF",
+          backgroundColor: backgroundColor,
           boxShadow: "none",
           borderRadius: 2,
         }}
+        onClick={() => console.log("Clicked!")}
       >
         <CardActionArea
           sx={{
@@ -40,14 +51,14 @@ export const ProcessCard = () => {
           </Stack>
 
           <Stack alignItems="center" spacing={1} height="100%" paddingTop={1}>
-            <CreatorSVG iconName="Board" />
+            <CreatorSVG iconName={icon} />
             <StyledTypography
               fontSize={16}
               fontWeight={typography.fontWeightMedium}
               color={palette.common.white}
               lineHeight="24px"
             >
-              Process 1
+              {title} {id}
             </StyledTypography>
           </Stack>
         </CardActionArea>

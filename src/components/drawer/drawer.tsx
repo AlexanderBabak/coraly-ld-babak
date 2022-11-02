@@ -76,7 +76,7 @@ export const Drawer: React.FC<Props> = ({ open, onClose, pages }) => {
           bordercolor={palette.primary.main}
           marginright={10}
         >
-          {getFirstChairs(user?.workspaceName)}
+          {getFirstChairs(user?.workspaceName!)}
         </AvatarStyled>
 
         {open && (
