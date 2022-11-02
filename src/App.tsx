@@ -11,9 +11,9 @@ import { TermsConditionsPage } from "modules/auth/registration/TermsConditionsPa
 import { AuthProvider, UserProvider } from "routes/AuthProvider";
 import { RegisterLayout } from "components/layouts/RegisterLayout";
 import { ResetLayout } from "components/layouts/ResetLayout";
-import "assets/styles/App.css";
 import AppLayout from "components/layouts/AppLayout";
 import { ProcessPage } from "modules/process/ProcessPage";
+import "assets/styles/App.css";
 
 export function App() {
   return (

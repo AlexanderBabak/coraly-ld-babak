@@ -24,7 +24,6 @@ export const DrawerStyled = styled(MuiDrawer, {
 })(
   ({ theme, open }): CSSObject => ({
     width: 236,
-
     flexShrink: 0,
     whiteSpace: "nowrap",
     boxSizing: "border-box",

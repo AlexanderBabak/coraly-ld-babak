@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import { Page } from "interfaces/pageInterface";
 import { CreatorSVG } from "components/сreatorSVG/CreatorSVG";
@@ -13,10 +13,13 @@ import {
 } from "components/reusable";
 import NavListItem from "../navListItem/NavListItem";
 import { AvatarStyled } from "components/avatar/AvatarStyled";
-import { useAppSelector } from "redux/reduxType";
+import { useAppDispatch, useAppSelector } from "redux/reduxType";
 import { getFirstChairs } from "helpers/getFirstChairs";
 import CoralyLogo from "assets/coralyLogo";
 import CoralyLogoText from "assets/coralyLogoText";
+import { pageLog } from "./pages";
+import { setActivePage } from "modules/process/pagesSlice";
+import { signOut } from "modules/auth/authorizationSlice";
 
 type Props = {
   pages: Page[];
@@ -27,6 +30,8 @@ type Props = {
 export const Drawer: React.FC<Props> = ({ open, onClose, pages }) => {
   const { palette } = useTheme();
   const { user } = useAppSelector((state) => state.auth);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const styles = {
     link: {
@@ -85,12 +90,21 @@ export const Drawer: React.FC<Props> = ({ open, onClose, pages }) => {
         )}
       </StyledBox>
 
-      <ListStyled sx={styles.list} onClick={() => {}}>
+      <ListStyled sx={styles.list}>
         {pages.map((page) => (
           <Link to={page.path} key={page.name} style={styles.link}>
             <NavListItem page={page} open={open} />
           </Link>
         ))}
+        <StyledBox
+          onClick={() => {
+            dispatch(signOut());
+            dispatch(setActivePage(null));
+            navigate("/login");
+          }}
+        >
+          <NavListItem page={pageLog} open={open} />
+        </StyledBox>
       </ListStyled>
       <StyledBox justifyContent="center" sx={styles.logo} paddingBottom={3}>
         {open ? <CoralyLogoText /> : <CoralyLogo />}

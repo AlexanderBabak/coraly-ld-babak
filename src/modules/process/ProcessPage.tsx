@@ -1,21 +1,19 @@
-import { useNavigate } from "react-router-dom";
-import { StyledButton, StyledTypography } from "components/reusable";
+import { StyledTypography } from "components/reusable";
 import { useEffect } from "react";
 import { getUserThunk } from "modules/auth/authorizationAction";
-import { signOut } from "modules/auth/authorizationSlice";
 import { useAppDispatch, useAppSelector } from "redux/reduxType";
-import { Stack, useTheme } from "@mui/material";
+import { Stack, useTheme, Grid } from "@mui/material";
+import { ProcessCard } from "modules/process/processCard/ProcessCard";
 
 export const ProcessPage = () => {
   const { user } = useAppSelector((state) => state.auth);
-
-  const { palette, typography } = useTheme();
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getUserThunk());
   }, [dispatch]);
+
+  const { palette, typography } = useTheme();
 
   return (
     <>
@@ -39,15 +37,20 @@ export const ProcessPage = () => {
           tasks
         </StyledTypography>
       </Stack>
-
-      {/* <StyledButton
-        text="Log out"
-        fullWidth={false}
-        onClick={() => {
-          dispatch(signOut());
-          navigate("/login");
-        }}
-      /> */}
+      <Grid container spacing={2} marginTop={1}>
+        <Grid item>
+          <ProcessCard />
+        </Grid>
+        <Grid item>
+          <ProcessCard />
+        </Grid>
+        <Grid item>
+          <ProcessCard />
+        </Grid>
+        <Grid item>
+          <ProcessCard />
+        </Grid>
+      </Grid>
     </>
   );
 };

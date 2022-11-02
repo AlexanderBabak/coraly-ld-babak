@@ -24,8 +24,16 @@ export const AppBar: React.FC<Props> = ({ open }) => {
   const { palette } = useTheme();
 
   return (
-    <AppBarStyled position="fixed" open={open} role={"app-bar"}>
-      <Container maxWidth="xl" disableGutters>
+    <AppBarStyled
+      position="fixed"
+      open={open}
+      role={"app-bar"}
+      // добавил
+      // sx={{ maxWidth: 1400 }}
+    >
+      {/* maxWidth="xl" было так */}
+      {/* sx={{ maxWidth: 1400 }} */}
+      <Container disableGutters>
         <Toolbar>
           <CustomSeparator activePageName={activePageName} />
           <Stack direction="row" alignItems="center" gap={1}>

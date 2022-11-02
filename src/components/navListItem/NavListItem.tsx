@@ -8,8 +8,7 @@ import { StyledBox } from "components/reusable";
 import { Page } from "interfaces/pageInterface";
 import ListItemButtonStyled from "./ListItemButtonStyled";
 import { useAppSelector, useAppDispatch } from "redux/reduxType";
-import { setActivePage } from "modules/pages/pagesSlice";
-import { signOut } from "modules/auth/authorizationSlice";
+import { setActivePage } from "modules/process/pagesSlice";
 
 type Props = {
   page: Page;
@@ -36,7 +35,6 @@ const NavListItem: React.FC<Props> = ({ page, open }) => {
 
   useEffect(() => {
     checkIsPageActive(activePageName);
-    // checkIsPageLogout(activePageName);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activePageName]);
 
@@ -48,12 +46,6 @@ const NavListItem: React.FC<Props> = ({ page, open }) => {
     }
   };
 
-  const checkIsPageLogout = (pageName: Page["displayName"] | null): void => {
-    if (activePageName === "Logout") {
-      dispatch(signOut());
-    }
-  };
-
   return (
     <>
       <ListItemStyled
@@ -62,8 +54,7 @@ const NavListItem: React.FC<Props> = ({ page, open }) => {
         marginbottom={2}
       >
         <StyledBox
-          // подсветка активного айтема
-          bgcolor={isActive ? palette.grey["100"] : "transparent"}
+          bgcolor={isActive ? "#114262" : "transparent"}
           width={"100%"}
           borderRadius={8}
           height={48}
