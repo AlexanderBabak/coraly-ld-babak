@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getUserThunk } from "modules/auth/authorizationThunk";
 import { useAppDispatch, useAppSelector } from "redux/reduxType";
 import { Stack, useTheme, Grid, CircularProgress } from "@mui/material";
-import { getCardsThunk } from "./processThunk";
+import { getCardsThunk } from "../processThunk";
 import { ProcessCard } from "./processCard/ProcessCard";
 import { CreateProcessCard } from "./processCard/CreateProcessCard";
 

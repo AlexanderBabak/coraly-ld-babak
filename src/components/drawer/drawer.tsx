@@ -18,7 +18,7 @@ import { getFirstChairs } from "helpers/getFirstChairs";
 import CoralyLogo from "assets/coralyLogo";
 import CoralyLogoText from "assets/coralyLogoText";
 import { pageLog } from "./pages";
-import { setActivePage } from "modules/process/pagesSlice";
+import { setActivePage } from "modules/process/processSlice";
 import { signOut } from "modules/auth/authorizationSlice";
 
 type Props = {

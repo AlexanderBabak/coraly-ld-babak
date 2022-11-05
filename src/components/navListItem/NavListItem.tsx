@@ -8,7 +8,7 @@ import { StyledBox } from "components/reusable";
 import { IPage } from "api/process/processDto";
 import ListItemButtonStyled from "./ListItemButtonStyled";
 import { useAppSelector, useAppDispatch } from "redux/reduxType";
-import { setActivePage } from "modules/process/pagesSlice";
+import { setActivePage } from "modules/process/processSlice";
 
 type Props = {
   page: IPage;
