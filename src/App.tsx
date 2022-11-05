@@ -14,6 +14,7 @@ import { ResetLayout } from "components/layouts/ResetLayout";
 import AppLayout from "components/layouts/AppLayout";
 import { ProcessPage } from "modules/process/ProcessPage";
 import "assets/styles/App.css";
+import { TeamPage } from "modules/process/TeamPage";
 
 export function App() {
   return (
@@ -37,9 +38,10 @@ export function App() {
           <Route path="/" element={<AppLayout />}>
             <Route index element={<ProcessPage />} />
             <Route path="processi" element={<ProcessPage />} />
+            <Route path="team" element={<TeamPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Route>
-        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
   );

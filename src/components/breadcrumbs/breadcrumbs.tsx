@@ -10,24 +10,24 @@ function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
 
 export const CustomSeparator = ({ activePageName }: any) => {
   const breadcrumbs = [
-    <Link
-      underline="hover"
-      key="1"
-      color="inherit"
-      fontSize={20}
-      fontWeight={600}
-      href="/"
-      onClick={handleClick}
-    >
-      {activePageName}
-    </Link>,
+    // <Link
+    //   underline="hover"
+    //   key="1"
+    //   color="inherit"
+    //   fontSize={20}
+    //   fontWeight={600}
+    //   href="/"
+    //   onClick={handleClick}
+    // >
+    //   {activePageName}
+    // </Link>,
     <StyledTypography
       key="2"
       color="text.primary"
       fontSize={20}
       fontWeight={600}
     >
-      Process 1
+      {activePageName}
     </StyledTypography>,
   ];
 

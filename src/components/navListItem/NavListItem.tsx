@@ -5,13 +5,13 @@ import ListItemText from "@mui/material/ListItemText";
 import { ListItemStyled } from "./ListItemStyled";
 import { CreatorSVG } from "components/сreatorSVG/CreatorSVG";
 import { StyledBox } from "components/reusable";
-import { Page } from "interfaces/pageInterface";
+import { IPage } from "api/process/processDto";
 import ListItemButtonStyled from "./ListItemButtonStyled";
 import { useAppSelector, useAppDispatch } from "redux/reduxType";
 import { setActivePage } from "modules/process/pagesSlice";
 
 type Props = {
-  page: Page;
+  page: IPage;
   open: boolean;
 };
 
@@ -38,7 +38,7 @@ const NavListItem: React.FC<Props> = ({ page, open }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activePageName]);
 
-  const checkIsPageActive = (pageName: Page["displayName"] | null): void => {
+  const checkIsPageActive = (pageName: IPage["displayName"] | null): void => {
     if (activePageName && page.displayName === pageName) {
       setIsActive(true);
     } else {

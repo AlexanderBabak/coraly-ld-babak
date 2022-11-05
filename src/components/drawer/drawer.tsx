@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
-import { Page } from "interfaces/pageInterface";
+import { IPage } from "api/process/processDto";
 import { CreatorSVG } from "components/сreatorSVG/CreatorSVG";
 import { DrawerStyled } from "./DrawerStyled";
 import { DrawerHeaderStyled } from "./DrawerHeaderStyled";
@@ -22,7 +22,7 @@ import { setActivePage } from "modules/process/pagesSlice";
 import { signOut } from "modules/auth/authorizationSlice";
 
 type Props = {
-  pages: Page[];
+  pages: IPage[];
   open: boolean;
   onClose: () => void;
 };

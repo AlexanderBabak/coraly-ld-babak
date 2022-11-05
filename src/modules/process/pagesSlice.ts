@@ -1,12 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Page } from "interfaces/pageInterface";
-import { ICard } from "interfaces/cardsInterface";
+import { ICard, IPage } from "api/process/processDto";
 import { getCardsThunk } from "modules/process/processThunk";
 
 interface pagesState {
   loadingCards: boolean;
   errorCards: string | undefined;
-  activePageName: Page["displayName"] | null;
+  activePageName: IPage["displayName"] | null;
   processCards: ICard[];
 }
 

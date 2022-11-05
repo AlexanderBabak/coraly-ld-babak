@@ -7,7 +7,7 @@ import { CreatorSVG } from "components/сreatorSVG/CreatorSVG";
 import { StyledTypography } from "components/reusable";
 import { useTheme } from "@mui/material";
 import Tooltip from "@mui/material/Tooltip";
-import { ICard } from "interfaces/cardsInterface";
+import { ICard } from "api/process/processDto";
 
 export const ProcessCard: React.FC<ICard> = ({
   isPrivate,

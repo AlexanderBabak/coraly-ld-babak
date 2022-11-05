@@ -25,7 +25,7 @@ export const AppBar: React.FC<Props> = ({ open }) => {
 
   return (
     <AppBarStyled position="fixed" open={open} role={"app-bar"}>
-      <Container disableGutters>
+      <Container disableGutters sx={{ marginLeft: 2 }} maxWidth="xl">
         <Toolbar>
           <CustomSeparator activePageName={activePageName} />
           <Stack direction="row" alignItems="center" gap={1}>

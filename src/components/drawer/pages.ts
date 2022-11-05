@@ -8,7 +8,7 @@ export const pages = [
   {
     name: "team",
     displayName: "Team",
-    path: "/processi",
+    path: "/team",
     iconName: "Team",
   },
   {
