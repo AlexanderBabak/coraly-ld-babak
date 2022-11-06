@@ -41,6 +41,7 @@ export const theme = createTheme({
       400: "#e5e5e5",
       500: "#f7f7f7",
       600: "#fff",
+      700: "#83828E",
     },
   },
   typography: {

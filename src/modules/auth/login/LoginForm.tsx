@@ -1,6 +1,6 @@
 import { Box, useTheme } from "@mui/material";
 import { AuthNavigation } from "components/navigation/AuthNavigation";
-import { AuthTitle } from "components/AuthTitle";
+import { AuthTitle } from "components/authTitle/AuthTitle";
 import { useForm } from "react-hook-form";
 import { LoginParams } from "api/auth/authDto";
 import {

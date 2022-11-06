@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { AuthNavigation } from "components/navigation/AuthNavigation";
-import { AuthTitle } from "components/AuthTitle";
+import { AuthTitle } from "components/authTitle/AuthTitle";
 import { StyledButton, StyledInput } from "components/reusable";
 import { LoginParams } from "api/auth/authDto";
 

@@ -8,7 +8,7 @@ import {
   StyledLink,
 } from "components/reusable";
 import { AuthNavigation } from "components/navigation/AuthNavigation";
-import { AuthTitle } from "components/AuthTitle";
+import { AuthTitle } from "components/authTitle/AuthTitle";
 import { RegisterParams } from "api/auth/authDto";
 import { RegisterSubmitProps } from "interfaces/submitProps";
 

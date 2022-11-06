@@ -4,7 +4,7 @@ import { useTheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import { useAppSelector } from "redux/reduxType";
 import { AppBarStyled } from "./AppBarStyled";
-import { CustomSeparator } from "components/breadcrumbs/breadcrumbs";
+import { CustomSeparator } from "components/breadcrumbs/Breadcrumbs";
 import { AvatarStyled } from "components/avatar/AvatarStyled";
 import { getFirstChairs } from "helpers/getFirstChairs";
 import ShortcutIcon from "assets/icons/ShortcutIcon";

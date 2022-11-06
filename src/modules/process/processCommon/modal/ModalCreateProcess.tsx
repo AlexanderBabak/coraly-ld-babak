@@ -46,6 +46,7 @@ export const ModalCreateProcess: React.FC<Props> = ({
             <CloseOutlinedIcon />
           </IconButton>
         </Stack>
+
         <InputCards label="Process name" fullWidth />
         <InputIcon />
 

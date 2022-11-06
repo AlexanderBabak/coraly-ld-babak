@@ -37,7 +37,8 @@ export const ProcessItemTable = () => {
     },
   };
   return (
-    <TableContainer component={Paper}>
+    // поправить marginTop 66px
+    <TableContainer component={Paper} sx={{ marginTop: "131px" }}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableBody>
           {data.map((user) => (

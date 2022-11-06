@@ -40,7 +40,7 @@ export function App() {
           <Route path="/" element={<AppLayout />}>
             <Route index element={<ProcessPage />} />
             <Route path="processi" element={<ProcessPage />} />
-            <Route path="processi/process1" element={<ToolbarStyled />} />
+            <Route path="processi/process1" element={<ProcessItemPage />} />
             <Route path="team" element={<TeamPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>

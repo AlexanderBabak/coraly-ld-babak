@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { ResetParams } from "api/auth/authDto";
 import { useForm } from "react-hook-form";
-import { AuthTitle } from "components/AuthTitle";
+import { AuthTitle } from "components/authTitle/AuthTitle";
 import { StyledInput, StyledButton } from "components/reusable";
 
 interface FormProps {
