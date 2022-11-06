@@ -5,14 +5,13 @@ import ListItemText from "@mui/material/ListItemText";
 import { ListItemStyled } from "./ListItemStyled";
 import { CreatorSVG } from "components/сreatorSVG/CreatorSVG";
 import { StyledBox } from "components/reusable";
-import { Page } from "interfaces/pageInterface";
+import { IPage } from "api/process/processDto";
 import ListItemButtonStyled from "./ListItemButtonStyled";
 import { useAppSelector, useAppDispatch } from "redux/reduxType";
-import { setActivePage } from "modules/pages/pagesSlice";
-import { signOut } from "modules/auth/authorizationSlice";
+import { setActivePage } from "modules/process/processSlice";
 
 type Props = {
-  page: Page;
+  page: IPage;
   open: boolean;
 };
 
@@ -36,21 +35,14 @@ const NavListItem: React.FC<Props> = ({ page, open }) => {
 
   useEffect(() => {
     checkIsPageActive(activePageName);
-    // checkIsPageLogout(activePageName);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activePageName]);
 
-  const checkIsPageActive = (pageName: Page["displayName"] | null): void => {
+  const checkIsPageActive = (pageName: IPage["displayName"] | null): void => {
     if (activePageName && page.displayName === pageName) {
       setIsActive(true);
     } else {
       setIsActive(false);
-    }
-  };
-
-  const checkIsPageLogout = (pageName: Page["displayName"] | null): void => {
-    if (activePageName === "Logout") {
-      dispatch(signOut());
     }
   };
 
@@ -62,8 +54,7 @@ const NavListItem: React.FC<Props> = ({ page, open }) => {
         marginbottom={2}
       >
         <StyledBox
-          // подсветка активного айтема
-          bgcolor={isActive ? palette.grey["100"] : "transparent"}
+          bgcolor={isActive ? "#114262" : "transparent"}
           width={"100%"}
           borderRadius={8}
           height={48}

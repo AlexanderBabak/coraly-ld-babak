@@ -10,6 +10,8 @@ import VenditoriIcon from "assets/icons/VenditoriIcon";
 import SupportoIcon from "assets/icons/SupportoIcon";
 import LogoutIcon from "assets/icons/LogoutIcon";
 import MenuIcon from "assets/icons/MenuIcon";
+import BoardIcon from "assets/icons/BoardIcon";
+import CartIcon from "assets/icons/CartIcon";
 
 type Props = {
   iconName: string;
@@ -27,6 +29,8 @@ export const iconsMap: Record<string, any> = {
   Supporto: SupportoIcon,
   Logout: LogoutIcon,
   Menu: MenuIcon,
+  Board: BoardIcon,
+  Cart: CartIcon,
 };
 
 export const CreatorSVG: React.FC<Props> = ({ iconName, color }) => {

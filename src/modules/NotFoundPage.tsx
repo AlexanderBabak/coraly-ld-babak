@@ -8,20 +8,12 @@ export const NotFoundPage = () => {
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
 
-  const styles = {
-    stack: {
-      paddingTop: 30,
-    },
-    text: {
-      textAlign: "center",
-    },
-  };
   return (
-    <Container maxWidth="lg" sx={styles.stack} disableGutters>
+    <Container maxWidth="lg" disableGutters>
       <Container maxWidth="sm" disableGutters>
-        <Stack rowGap={2}>
+        <Stack rowGap={2} padding="200px 0">
           <Box component="img" src={NotFound} />
-          <Stack alignItems="center" rowGap={2}>
+          <Stack alignItems="center" rowGap={2} textAlign="center">
             <StyledTypography
               fontSize={24}
               fontWeight={typography.fontWeightBold}
@@ -34,7 +26,6 @@ export const NotFoundPage = () => {
               fontWeight={typography.fontWeightRegular}
               color={palette.text.secondary}
               lineHeight="18px"
-              sx={styles.text}
             >
               The page you are trying to reach is not available. It may have
               been deleted or its URL was misspelled.

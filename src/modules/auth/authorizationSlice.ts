@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUserThunk } from "./authorizationAction";
+import { getUserThunk } from "./authorizationThunk";
 import { IUserResponse } from "api/auth/authDto";
 
 interface IAuth {

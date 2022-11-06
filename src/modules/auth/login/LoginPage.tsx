@@ -6,7 +6,7 @@ import { StyledSnackbar } from "components/reusable";
 import { useNavigate } from "react-router";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useAppDispatch, useAppSelector } from "redux/reduxType";
-import { getUserThunk } from "../authorizationAction";
+import { getUserThunk } from "../authorizationThunk";
 import { LoginSubmitProps } from "interfaces/submitProps";
 import BannerLogin from "assets/BannerLogin.png";
 
@@ -40,10 +40,17 @@ export const LoginPage = () => {
       });
   };
 
+  const styles = {
+    circular: {
+      marginLeft: 15,
+      marginTop: 15,
+    },
+  };
+
   return (
     <LoginLayout banner={BannerLogin} maxWidth={"320px"}>
       {loadingAuth ? (
-        <CircularProgress sx={{ marginLeft: 15, marginTop: 15 }} />
+        <CircularProgress sx={styles.circular} />
       ) : (
         <LoginForm onSubmit={onSubmit} />
       )}

@@ -25,7 +25,7 @@ const Input = styled(TextField)(({ theme }): CSSObject => {
 type Props = {
   type?: string;
   size?: "small" | "medium" | undefined;
-  helperText: string | undefined;
+  helperText?: string | undefined;
   fullWidth?: boolean;
   color?:
     | "error"
@@ -37,7 +37,7 @@ type Props = {
     | undefined;
   validation?: any;
   label: string;
-  error: boolean | undefined;
+  error?: boolean | undefined;
 };
 
 export const StyledInput: React.FC<Props> = ({

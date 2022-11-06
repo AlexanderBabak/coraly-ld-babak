@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { StyledInput, StyledButton } from "components/reusable";
-import { AuthTitle } from "components/AuthTitle";
+import { AuthTitle } from "components/authTitle/AuthTitle";
 import { RegisterCompleteParams } from "api/auth/authDto";
 import { useForm } from "react-hook-form";
 import { CompleteSubmitProps } from "interfaces/submitProps";

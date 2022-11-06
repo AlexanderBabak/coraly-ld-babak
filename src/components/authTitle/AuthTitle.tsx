@@ -1,5 +1,5 @@
 import { Box, useTheme } from "@mui/material";
-import { StyledTypography } from "./reusable";
+import { StyledTypography } from "../reusable";
 
 type Props = {
   title: string;

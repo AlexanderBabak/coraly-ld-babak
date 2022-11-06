@@ -29,6 +29,8 @@ type Props = {
   type?: "button" | "submit" | "reset" | undefined;
   fullWidth?: boolean;
   onClick?: () => void;
+  marginleft?: string;
+  disableElevation?: boolean;
 };
 
 export const StyledButton: React.FC<Props> = ({
@@ -38,6 +40,8 @@ export const StyledButton: React.FC<Props> = ({
   type = "submit",
   fullWidth = true,
   onClick,
+  marginleft,
+  disableElevation = false,
   ...restProps
 }) => {
   return (
@@ -47,6 +51,8 @@ export const StyledButton: React.FC<Props> = ({
       color={color}
       variant={variant}
       onClick={onClick}
+      disableElevation={disableElevation}
+      sx={{ marginLeft: marginleft }}
       {...restProps}
     >
       {text}

@@ -11,9 +11,12 @@ import { TermsConditionsPage } from "modules/auth/registration/TermsConditionsPa
 import { AuthProvider, UserProvider } from "routes/AuthProvider";
 import { RegisterLayout } from "components/layouts/RegisterLayout";
 import { ResetLayout } from "components/layouts/ResetLayout";
-import "assets/styles/App.css";
 import AppLayout from "components/layouts/AppLayout";
-import { ProcessPage } from "modules/process/ProcessPage";
+import { ProcessPage } from "modules/process/processCommon/ProcessPage";
+import "assets/styles/App.css";
+import { TeamPage } from "modules/team/TeamPage";
+import { ProcessItemPage } from "modules/process/processItem/ProcessItemPage";
+import { ToolbarStyled } from "modules/process/processItem/toolbar/Toolbar";
 
 export function App() {
   return (
@@ -37,9 +40,11 @@ export function App() {
           <Route path="/" element={<AppLayout />}>
             <Route index element={<ProcessPage />} />
             <Route path="processi" element={<ProcessPage />} />
+            <Route path="processi/process1" element={<ProcessItemPage />} />
+            <Route path="team" element={<TeamPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Route>
-        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
   );

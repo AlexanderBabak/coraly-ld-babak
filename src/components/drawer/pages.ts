@@ -8,7 +8,7 @@ export const pages = [
   {
     name: "team",
     displayName: "Team",
-    path: "/processi",
+    path: "/team",
     iconName: "Team",
   },
   {
@@ -47,10 +47,11 @@ export const pages = [
     path: "/supporto",
     iconName: "Supporto",
   },
-  {
-    name: "logout",
-    displayName: "Logout",
-    path: "/login",
-    iconName: "Logout",
-  },
 ];
+
+export const pageLog = {
+  name: "logout",
+  displayName: "Logout",
+  path: "/login",
+  iconName: "Logout",
+};
