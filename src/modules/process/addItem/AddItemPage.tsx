@@ -1,6 +1,15 @@
 import React from "react";
 import { StyledButton, StyledTypography } from "components/reusable";
-import { IconButton, Stack, Box, Modal, Divider, Link } from "@mui/material";
+import {
+  IconButton,
+  Stack,
+  Box,
+  Modal,
+  AvatarGroup,
+  Avatar,
+  Link,
+  useTheme,
+} from "@mui/material";
 import { InputCards } from "components/reusable/InputCards";
 import { InputIcon } from "components/customInputs/InputIcon";
 
@@ -22,6 +31,7 @@ export const AddItemPage: React.FC<Props> = ({
   openModal,
   handleCloseModal,
 }) => {
+  const { palette } = useTheme();
   const styles = {
     content: {
       position: "absolute",
@@ -33,6 +43,13 @@ export const AddItemPage: React.FC<Props> = ({
       bgcolor: "background.paper",
       borderRadius: "15px",
       p: 3,
+    },
+    avatar: {
+      width: 24,
+      height: 24,
+      backgroundColor: palette.info.main,
+      fontSize: 8,
+      marginRight: 1,
     },
   };
   return (
@@ -79,7 +96,18 @@ export const AddItemPage: React.FC<Props> = ({
             </Stack>
           </Stack>
         </Stack>
-        <Stack>{/* left side */}</Stack>
+
+        <Stack>
+          <Stack direction="row">
+            <AvatarGroup max={4}>
+              <Avatar sx={styles.avatar}>PL</Avatar>
+              <Avatar>PL</Avatar>
+              <Avatar>PL</Avatar>
+            </AvatarGroup>
+            <StyledTypography title="Hello"></StyledTypography>
+          </Stack>
+        </Stack>
+
         <Stack>{/* right side */}</Stack>
       </Box>
     </Modal>
