@@ -1,9 +1,9 @@
 import React from "react";
 import { Stack, Box, Modal } from "@mui/material";
-import { HeaderAddItemPage } from "./HeaderAddItem/HeaderAddItemPage";
-import { LeftMainAddItemPage } from "./LeftMainAddItem/LeftMainAddItemPage";
-import { RightMainAddItemPage } from "./RightMainAddItem/RightMainAddItemPage";
-import { FooterAddItemPage } from "./FooterAddItem/FooterAddItemPage";
+import { HeaderAddItemPage } from "./headerAddItem/HeaderAddItemPage";
+import { LeftMainAddItemPage } from "./leftMainAddItem/LeftMainAddItemPage";
+import { RightMainAddItemPage } from "./rightMainAddItem/RightMainAddItemPage";
+import { FooterAddItemPage } from "./footerAddItem/FooterAddItemPage";
 
 type Props = {
   openModal: boolean;

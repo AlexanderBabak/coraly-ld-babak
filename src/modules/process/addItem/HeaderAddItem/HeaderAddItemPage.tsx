@@ -14,35 +14,36 @@ type Props = {
   handleCloseModal: () => void;
 };
 
+const icons = [
+  <FolderOutlinedIcon />,
+  <CenterFocusWeakOutlinedIcon />,
+  <LinkOutlinedIcon />,
+  <PlaylistRemoveOutlinedIcon />,
+  <DeleteOutlinedIcon />,
+];
+
 export const HeaderAddItemPage: React.FC<Props> = ({ handleCloseModal }) => {
+  const { typography } = useTheme();
   return (
     <Stack direction="row" justifyContent="space-between">
-      <StyledTypography fontSize={20} fontWeight={700} lineHeight="36px">
+      <StyledTypography
+        fontSize={20}
+        fontWeight={typography.fontWeightBold}
+        lineHeight="36px"
+      >
         Courtney@mail.com
       </StyledTypography>
       <Stack direction="row" spacing={2}>
         <Stack direction="row" alignItems="center" spacing="5px">
           <RemoveRedEyeOutlinedIcon color="primary" />
-          <Link href="#" fontWeight={600}>
+          <Link href="#" fontWeight={typography.fontWeightMedium}>
             KO Motivation
           </Link>
         </Stack>
         <Stack direction="row" spacing="5px">
-          <IconButton>
-            <FolderOutlinedIcon />
-          </IconButton>
-          <IconButton>
-            <CenterFocusWeakOutlinedIcon />
-          </IconButton>
-          <IconButton>
-            <LinkOutlinedIcon />
-          </IconButton>
-          <IconButton>
-            <PlaylistRemoveOutlinedIcon />
-          </IconButton>
-          <IconButton>
-            <DeleteOutlinedIcon />
-          </IconButton>
+          {icons.map((icon, index) => (
+            <IconButton key={index}>{icon}</IconButton>
+          ))}
         </Stack>
 
         <Stack direction="row">

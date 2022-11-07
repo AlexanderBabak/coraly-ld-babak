@@ -7,6 +7,14 @@ type Props = {
 };
 
 export const FooterAddItemPage: React.FC<Props> = ({ handleCloseModal }) => {
+  const { palette, typography } = useTheme();
+  const styles = {
+    box: {
+      fontWeight: typography.fontWeightRegular,
+      fontSize: typography.fontSize,
+      lineHeight: "18px",
+    },
+  };
   return (
     <Stack
       direction="row"
@@ -15,16 +23,13 @@ export const FooterAddItemPage: React.FC<Props> = ({ handleCloseModal }) => {
       marginTop={2}
     >
       <StyledTypography
-        color="#464356"
-        fontWeight={600}
+        color={palette.text.primary}
+        fontWeight={typography.fontWeightMedium}
         fontSize={16}
         lineHeight="24px"
       >
         Fase ID:{" "}
-        <Box
-          component="span"
-          sx={{ fontWeight: 400, fontSize: 14, lineHeight: "18px" }}
-        >
+        <Box component="span" sx={styles.box}>
           61571535e7058c00143322b8
         </Box>
       </StyledTypography>

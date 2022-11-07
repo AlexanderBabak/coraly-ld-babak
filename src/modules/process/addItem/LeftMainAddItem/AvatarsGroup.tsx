@@ -8,7 +8,7 @@ export const AvatarsGroup = () => {
 
   const styles = {
     avatarGroup: {
-      "& .MuiAvatarGroup-avatar:first-child": {
+      "& .MuiAvatarGroup-avatar:first-of-type": {
         color: palette.info.main,
         fontWeight: typography.fontWeightRegular,
         fontSize: 12,
