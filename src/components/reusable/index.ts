@@ -8,3 +8,4 @@ export * from "./TypographyStyled";
 export * from "./ListStyled";
 export * from "./IconButtonStyled";
 export * from "./StackStyled";
+export * from "./InputCards";
