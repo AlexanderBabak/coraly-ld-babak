@@ -17,6 +17,7 @@ import "assets/styles/App.css";
 import { TeamPage } from "modules/team/TeamPage";
 import { ProcessItemPage } from "modules/process/processItem/ProcessItemPage";
 import { ToolbarStyled } from "modules/process/processItem/toolbar/Toolbar";
+import { ModelliPage } from "modules/modelli/ModelliPage";
 
 export function App() {
   return (
@@ -42,6 +43,7 @@ export function App() {
             <Route path="processi" element={<ProcessPage />} />
             <Route path="processi/process1" element={<ProcessItemPage />} />
             <Route path="team" element={<TeamPage />} />
+            <Route path="modelli" element={<ModelliPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Route>

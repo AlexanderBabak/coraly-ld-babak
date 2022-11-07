@@ -14,7 +14,7 @@ export const pages = [
   {
     name: "modelli",
     displayName: "Modelli",
-    path: "/processi",
+    path: "/modelli",
     iconName: "Modelli",
   },
   {
