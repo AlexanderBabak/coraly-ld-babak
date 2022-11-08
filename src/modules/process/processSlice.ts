@@ -8,6 +8,7 @@ interface pagesState {
   activePageName: IPage["displayName"] | null;
   processCards: ICard[];
   isDrawerOpen: boolean;
+  isCardOpen: boolean;
 }
 
 const initialState: pagesState = {
@@ -16,6 +17,7 @@ const initialState: pagesState = {
   activePageName: null,
   processCards: [],
   isDrawerOpen: false,
+  isCardOpen: false,
 };
 
 export const pagesSlice = createSlice({
@@ -27,6 +29,9 @@ export const pagesSlice = createSlice({
     },
     setDrawerOpen(state, action) {
       state.isDrawerOpen = action.payload;
+    },
+    setCardOpen(state, action) {
+      state.isCardOpen = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -46,5 +51,5 @@ export const pagesSlice = createSlice({
   },
 });
 
-export const { setActivePage, setDrawerOpen } = pagesSlice.actions;
+export const { setActivePage, setDrawerOpen, setCardOpen } = pagesSlice.actions;
 export default pagesSlice.reducer;

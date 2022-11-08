@@ -5,12 +5,11 @@ import { DividerVertical } from "modules/process/processItem/toolbar/DividerVert
 import { AvatarsGroup } from "./AvatarsGroup";
 import { ButtonAdd } from "components/buttonAdd/ButtonAdd";
 import { CreatorSVG } from "components/сreatorSVG/CreatorSVG";
-
+import { ChipsStyled } from "./ChipsStyled";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import PropaneTankOutlinedIcon from "@mui/icons-material/PropaneTankOutlined";
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
-import { ChipsStyled } from "./ChipsStyled";
 
 export const LeftHeader = () => {
   const { palette, typography } = useTheme();

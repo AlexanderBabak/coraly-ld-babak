@@ -68,20 +68,30 @@ export const AccordionContent = () => {
           id="panel1a-header"
           sx={styles.accordionSummary}
         >
-          <Stack direction="row" alignItems="center">
-            <IconButton disableRipple size="small" sx={styles.iconButton}>
-              <CreatorSVG iconName={"MacroFasi"} color={palette.primary.main} />
-            </IconButton>
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="space-between"
+          >
+            <Stack direction="row" alignItems="center">
+              <IconButton disableRipple size="small" sx={styles.iconButton}>
+                <CreatorSVG
+                  iconName={"MacroFasi"}
+                  color={palette.primary.main}
+                />
+              </IconButton>
 
-            <StyledTypography
-              fontSize={18}
-              fontWeight={typography.fontWeightBold}
-              lineHeight="27px"
-              color={palette.info.light}
-              marginRight={40}
-            >
-              Phase 2
-            </StyledTypography>
+              <StyledTypography
+                fontSize={18}
+                fontWeight={typography.fontWeightBold}
+                lineHeight="27px"
+                color={palette.info.light}
+                marginRight={40}
+              >
+                Phase 2
+              </StyledTypography>
+            </Stack>
+
             <Chip label="Ready" sx={styles.chip} />
           </Stack>
         </AccordionSummary>

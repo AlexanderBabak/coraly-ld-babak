@@ -20,7 +20,7 @@ export const pages = [
   {
     name: "database",
     displayName: "Database",
-    path: "/processi",
+    path: "/database",
     iconName: "Database",
   },
   {

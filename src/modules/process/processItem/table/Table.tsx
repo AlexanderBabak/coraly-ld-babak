@@ -18,6 +18,7 @@ export const ProcessItemTable = () => {
   const { palette } = useTheme();
 
   const styles = {
+    tableContainer: { boxShadow: "none" },
     row: {
       "& td, & th": {
         borderTop: "1px solid #EAEAEC",
@@ -37,8 +38,7 @@ export const ProcessItemTable = () => {
     },
   };
   return (
-    // поправить marginTop 66px
-    <TableContainer component={Paper} sx={{ marginTop: "131px" }}>
+    <TableContainer component={Paper} sx={styles.tableContainer}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableBody>
           {data.map((user) => (
