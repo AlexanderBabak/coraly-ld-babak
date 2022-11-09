@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ICard, IPage, ITableData } from "api/process/processDto";
+import { ICard, IPage, ICardData } from "api/process/processDto";
 import { getCardsThunk, getTableDataThunk } from "modules/process/processThunk";
 
 interface pagesState {
@@ -9,7 +9,7 @@ interface pagesState {
   processCards: ICard[];
   isDrawerOpen: boolean;
   isCardOpen: boolean;
-  tableData: ITableData[];
+  tableData: ICardData[];
   loadingTableData: boolean;
   errorTableData: string | undefined;
 }

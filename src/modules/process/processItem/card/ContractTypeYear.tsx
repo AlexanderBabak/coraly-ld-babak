@@ -27,6 +27,20 @@ export const ContractTypeYear = () => {
   };
 
   const { palette, typography } = useTheme();
+
+  const styles = {
+    textField: {
+      paddingBottom: 3,
+      ".MuiInputBase-root": { borderRadius: "8px" },
+      ".MuiFormLabel-root": {
+        fontSize: typography.fontSize,
+        fontWeight: typography.fontWeightRegular,
+        color: palette.text.secondary,
+        lineHeight: "18px",
+      },
+    },
+  };
+
   return (
     <TextField
       id="outlined-select-currency"
@@ -37,16 +51,7 @@ export const ContractTypeYear = () => {
       color="info"
       value={currency}
       onChange={handleChange}
-      sx={{
-        paddingBottom: 3,
-        ".MuiInputBase-root": { borderRadius: "8px" },
-        ".MuiFormLabel-root": {
-          fontSize: typography.fontSize,
-          fontWeight: typography.fontWeightRegular,
-          color: palette.text.secondary,
-          lineHeight: "18px",
-        },
-      }}
+      sx={styles.textField}
     >
       {currencies.map((option) => (
         <MenuItem key={option.value} value={option.value}>

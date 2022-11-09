@@ -45,11 +45,13 @@ export const ProcessItemTable = () => {
       fontSize: 8,
       marginRight: 1,
     },
+    circularProgress: { marginLeft: 80, marginTop: 30 },
   };
+
   return (
     <>
       {loadingTableData ? (
-        <CircularProgress sx={{ marginLeft: 80, marginTop: 30 }} />
+        <CircularProgress sx={styles.circularProgress} />
       ) : (
         <TableContainer component={Paper} sx={styles.tableContainer}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">

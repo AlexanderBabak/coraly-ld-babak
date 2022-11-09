@@ -19,6 +19,23 @@ export const ProcessCard: React.FC<ICard> = ({
 }) => {
   const { palette, typography } = useTheme();
 
+  const style = {
+    card: {
+      width: 150,
+      height: 150,
+      backgroundColor: backgroundColor,
+      boxShadow: "none",
+      borderRadius: 2,
+    },
+    cardActionArea: {
+      padding: "13px",
+      height: "100%",
+    },
+    link: { textDecoration: "none" },
+    lockOutlinedIcon: { width: 16, color: "#fff" },
+    moreVertOutlinedIcon: { width: 16, color: "#fff" },
+  };
+
   return (
     <Tooltip
       title="This is a private process "
@@ -26,30 +43,16 @@ export const ProcessCard: React.FC<ICard> = ({
       placement="top-start"
       disableHoverListener={!isPrivate}
     >
-      <Link to="/processi/process1" style={{ textDecoration: "none" }}>
-        <Card
-          sx={{
-            width: 150,
-            height: 150,
-            backgroundColor: backgroundColor,
-            boxShadow: "none",
-            borderRadius: 2,
-          }}
-          onClick={() => {}}
-        >
-          <CardActionArea
-            sx={{
-              padding: "13px",
-              height: "100%",
-            }}
-          >
+      <Link to="/processi/process1" style={style.link}>
+        <Card sx={style.card} onClick={() => {}}>
+          <CardActionArea sx={style.cardActionArea}>
             <Stack
               direction="row"
               justifyContent="space-between"
               visibility={!isPrivate ? "hidden" : "visible"}
             >
-              <LockOutlinedIcon sx={{ width: 16, color: "#fff" }} />
-              <MoreVertOutlinedIcon sx={{ width: 16, color: "#fff" }} />
+              <LockOutlinedIcon sx={style.lockOutlinedIcon} />
+              <MoreVertOutlinedIcon sx={style.moreVertOutlinedIcon} />
             </Stack>
 
             <Stack alignItems="center" spacing={1} height="100%" paddingTop={1}>

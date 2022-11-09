@@ -21,8 +21,22 @@ export const ContractTypeMensile = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCurrency(event.target.value);
   };
-
   const { palette, typography } = useTheme();
+
+  const styles = {
+    textField: {
+      paddingBottom: 1,
+      marginTop: 2,
+      ".MuiInputBase-root": { borderRadius: "8px" },
+      ".MuiFormLabel-root": {
+        fontSize: typography.fontSize,
+        fontWeight: typography.fontWeightRegular,
+        color: palette.text.secondary,
+        lineHeight: "18px",
+      },
+    },
+  };
+
   return (
     <TextField
       id="outlined-select-currency"
@@ -33,17 +47,7 @@ export const ContractTypeMensile = () => {
       color="info"
       value={currency}
       onChange={handleChange}
-      sx={{
-        paddingBottom: 1,
-        marginTop: 2,
-        ".MuiInputBase-root": { borderRadius: "8px" },
-        ".MuiFormLabel-root": {
-          fontSize: typography.fontSize,
-          fontWeight: typography.fontWeightRegular,
-          color: palette.text.secondary,
-          lineHeight: "18px",
-        },
-      }}
+      sx={styles.textField}
     >
       {currencies.map((option) => (
         <MenuItem key={option.value} value={option.value}>

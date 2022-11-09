@@ -22,12 +22,3 @@ export interface IPage {
   path: string;
   iconName: string;
 }
-
-export interface ITableData {
-  code: string;
-  name: string;
-  phoneNumber: string;
-  serie: string;
-  venditore: string;
-  date: string;
-}
