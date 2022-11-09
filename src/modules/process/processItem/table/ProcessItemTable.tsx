@@ -16,11 +16,9 @@ import { useAppDispatch } from "redux/reduxType";
 import { useAppSelector } from "redux/reduxType";
 
 export const ProcessItemTable = () => {
-  const { tableData, loadingTableData, errorTableData } = useAppSelector(
+  const { tableData, loadingTableData } = useAppSelector(
     (state) => state.pages
   );
-
-  console.log(errorTableData);
 
   const dispatch = useAppDispatch();
   useEffect(() => {

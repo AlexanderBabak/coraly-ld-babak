@@ -9,5 +9,8 @@ describe("AppBar", () => {
     expect(screen.getByRole("button")).toBeInTheDocument();
   });
 
-  it("App snapshot", () => {});
+  it("App snapshot", () => {
+    const view = renderWithRedux(<AppBar />);
+    expect(view).toMatchSnapshot();
+  });
 });

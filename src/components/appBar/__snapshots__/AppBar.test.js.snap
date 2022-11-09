@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppBar App snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-c4ty2p-MuiPaper-root-MuiAppBar-root"
+        role="app-bar"
+      >
+        <div
+          class="MuiContainer-root MuiContainer-maxWidthXl MuiContainer-disableGutters css-1d05qm9-MuiContainer-root"
+        >
+          <div
+            class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+          >
+            <nav
+              aria-label="breadcrumb"
+              class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-63vwl1-MuiTypography-root-MuiBreadcrumbs-root"
+            >
+              <ol
+                class="MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol"
+              >
+                <li
+                  class="MuiBreadcrumbs-li"
+                >
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 css-mkoyxu-MuiTypography-root"
+                  />
+                </li>
+              </ol>
+            </nav>
+            <div
+              class="css-1rlitzi-MuiStack-root"
+            >
+              <button
+                aria-label="notification"
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="NotificationsOutlinedIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+              <svg
+                fill="none"
+                height="29"
+                width="28"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.3118 19H9.34304L12.9276 8.81818H15.2045L18.794 19H16.8253L14.1058 10.9062H14.0263L11.3118 19ZM11.3764 15.0078H16.7457V16.4893H11.3764V15.0078Z"
+                  fill="#464356"
+                />
+                <g
+                  filter="url(#filter0_d_699_816)"
+                >
+                  <path
+                    d="M22.9355 1H4.37469C3.31445 1 2.43844 1.82738 2.37795 2.8859L1.12081 24.8859C1.05523 26.0334 1.96813 27 3.11755 27H24.8212C25.9932 27 26.914 25.9969 26.8139 24.8292L24.9282 2.8292C24.8395 1.79463 23.9739 1 22.9355 1Z"
+                    shape-rendering="crispEdges"
+                    stroke="#C1C0C7"
+                  />
+                </g>
+                <defs>
+                  <filter
+                    color-interpolation-filters="sRGB"
+                    filterUnits="userSpaceOnUse"
+                    height="28"
+                    id="filter0_d_699_816"
+                    width="26.7041"
+                    x="0.617188"
+                    y="0.5"
+                  >
+                    <feflood
+                      flood-opacity="0"
+                      result="BackgroundImageFix"
+                    />
+                    <fecolormatrix
+                      in="SourceAlpha"
+                      result="hardAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    />
+                    <feoffset
+                      dy="1"
+                    />
+                    <fecomposite
+                      in2="hardAlpha"
+                      operator="out"
+                    />
+                    <fecolormatrix
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"
+                    />
+                    <feblend
+                      in2="BackgroundImageFix"
+                      mode="normal"
+                      result="effect1_dropShadow_699_816"
+                    />
+                    <feblend
+                      in="SourceGraphic"
+                      in2="effect1_dropShadow_699_816"
+                      mode="normal"
+                      result="shape"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+              <div
+                bgcolor="#ba68c8"
+                bordercolor="#9c27b0"
+                class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-1udnakp-MuiAvatar-root"
+                marginleft="10"
+              >
+                uu
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  </body>,
+  "container": <div>
+    <header
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-c4ty2p-MuiPaper-root-MuiAppBar-root"
+      role="app-bar"
+    >
+      <div
+        class="MuiContainer-root MuiContainer-maxWidthXl MuiContainer-disableGutters css-1d05qm9-MuiContainer-root"
+      >
+        <div
+          class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+        >
+          <nav
+            aria-label="breadcrumb"
+            class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-63vwl1-MuiTypography-root-MuiBreadcrumbs-root"
+          >
+            <ol
+              class="MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol"
+            >
+              <li
+                class="MuiBreadcrumbs-li"
+              >
+                <p
+                  class="MuiTypography-root MuiTypography-body1 css-mkoyxu-MuiTypography-root"
+                />
+              </li>
+            </ol>
+          </nav>
+          <div
+            class="css-1rlitzi-MuiStack-root"
+          >
+            <button
+              aria-label="notification"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+              tabindex="0"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="NotificationsOutlinedIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"
+                />
+              </svg>
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+            <svg
+              fill="none"
+              height="29"
+              width="28"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.3118 19H9.34304L12.9276 8.81818H15.2045L18.794 19H16.8253L14.1058 10.9062H14.0263L11.3118 19ZM11.3764 15.0078H16.7457V16.4893H11.3764V15.0078Z"
+                fill="#464356"
+              />
+              <g
+                filter="url(#filter0_d_699_816)"
+              >
+                <path
+                  d="M22.9355 1H4.37469C3.31445 1 2.43844 1.82738 2.37795 2.8859L1.12081 24.8859C1.05523 26.0334 1.96813 27 3.11755 27H24.8212C25.9932 27 26.914 25.9969 26.8139 24.8292L24.9282 2.8292C24.8395 1.79463 23.9739 1 22.9355 1Z"
+                  shape-rendering="crispEdges"
+                  stroke="#C1C0C7"
+                />
+              </g>
+              <defs>
+                <filter
+                  color-interpolation-filters="sRGB"
+                  filterUnits="userSpaceOnUse"
+                  height="28"
+                  id="filter0_d_699_816"
+                  width="26.7041"
+                  x="0.617188"
+                  y="0.5"
+                >
+                  <feflood
+                    flood-opacity="0"
+                    result="BackgroundImageFix"
+                  />
+                  <fecolormatrix
+                    in="SourceAlpha"
+                    result="hardAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  />
+                  <feoffset
+                    dy="1"
+                  />
+                  <fecomposite
+                    in2="hardAlpha"
+                    operator="out"
+                  />
+                  <fecolormatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"
+                  />
+                  <feblend
+                    in2="BackgroundImageFix"
+                    mode="normal"
+                    result="effect1_dropShadow_699_816"
+                  />
+                  <feblend
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_699_816"
+                    mode="normal"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+            <div
+              bgcolor="#ba68c8"
+              bordercolor="#9c27b0"
+              class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-1udnakp-MuiAvatar-root"
+              marginleft="10"
+            >
+              uu
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

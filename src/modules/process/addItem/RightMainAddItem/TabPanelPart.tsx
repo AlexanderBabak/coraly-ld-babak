@@ -13,6 +13,15 @@ type Props = {
   value: number;
 };
 
+const tabPanelIcons = [
+  <AccordionContent />,
+  <DefaultContent />,
+  <DefaultContent />,
+  <DefaultContent />,
+  <DefaultContent />,
+  <DefaultContent />,
+];
+
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
 
@@ -36,24 +45,13 @@ function TabPanel(props: TabPanelProps) {
 export const TabPanelPart: React.FC<Props> = ({ value }) => {
   return (
     <>
-      <TabPanel value={value} index={0}>
-        <AccordionContent />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <DefaultContent />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <DefaultContent />
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <DefaultContent />
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        <DefaultContent />
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        <DefaultContent />
-      </TabPanel>
+      {tabPanelIcons.map((icon, index) => {
+        return (
+          <TabPanel value={value} index={index} key={index}>
+            {icon}
+          </TabPanel>
+        );
+      })}
     </>
   );
 };

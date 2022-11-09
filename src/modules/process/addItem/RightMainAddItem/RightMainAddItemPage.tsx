@@ -15,6 +15,15 @@ function a11yProps(index: number) {
   };
 }
 
+const tabArr = [
+  <ShoppingBagOutlinedIcon fontSize="small" />,
+  <FormatLineSpacingOutlinedIcon fontSize="small" />,
+  <ModeCommentOutlinedIcon fontSize="small" />,
+  <AttachFileOutlinedIcon fontSize="small" />,
+  <InsertLinkOutlinedIcon fontSize="small" />,
+  <SegmentOutlinedIcon fontSize="small" />,
+];
+
 export const RightMainAddItemPage = () => {
   const [value, setValue] = useState(0);
 
@@ -57,30 +66,9 @@ export const RightMainAddItemPage = () => {
         aria-label="Vertical tabs example"
         sx={styles.tabs}
       >
-        <Tab
-          icon={<ShoppingBagOutlinedIcon fontSize="small" />}
-          {...a11yProps(0)}
-        />
-        <Tab
-          icon={<FormatLineSpacingOutlinedIcon fontSize="small" />}
-          {...a11yProps(1)}
-        />
-        <Tab
-          icon={<ModeCommentOutlinedIcon fontSize="small" />}
-          {...a11yProps(2)}
-        />
-        <Tab
-          icon={<AttachFileOutlinedIcon fontSize="small" />}
-          {...a11yProps(3)}
-        />
-        <Tab
-          icon={<InsertLinkOutlinedIcon fontSize="small" />}
-          {...a11yProps(4)}
-        />
-        <Tab
-          icon={<SegmentOutlinedIcon fontSize="small" />}
-          {...a11yProps(5)}
-        />
+        {tabArr.map((tab, index) => {
+          return <Tab icon={tab} key={index} {...a11yProps(index)} />;
+        })}
       </Tabs>
     </Stack>
   );
