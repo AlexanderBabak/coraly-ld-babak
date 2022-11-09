@@ -8,6 +8,7 @@ import { StyledTypography } from "components/reusable";
 import { useTheme } from "@mui/material";
 import Tooltip from "@mui/material/Tooltip";
 import { ICard } from "api/process/processDto";
+import { Link } from "react-router-dom";
 
 export const ProcessCard: React.FC<ICard> = ({
   isPrivate,
@@ -25,44 +26,46 @@ export const ProcessCard: React.FC<ICard> = ({
       placement="top-start"
       disableHoverListener={!isPrivate}
     >
-      <Card
-        sx={{
-          width: 150,
-          height: 150,
-          backgroundColor: backgroundColor,
-          boxShadow: "none",
-          borderRadius: 2,
-        }}
-        onClick={() => console.log("Clicked!")}
-      >
-        <CardActionArea
+      <Link to="/processi/process1" style={{ textDecoration: "none" }}>
+        <Card
           sx={{
-            padding: "13px",
-            height: "100%",
+            width: 150,
+            height: 150,
+            backgroundColor: backgroundColor,
+            boxShadow: "none",
+            borderRadius: 2,
           }}
+          onClick={() => {}}
         >
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            visibility={!isPrivate ? "hidden" : "visible"}
+          <CardActionArea
+            sx={{
+              padding: "13px",
+              height: "100%",
+            }}
           >
-            <LockOutlinedIcon sx={{ width: 16, color: "#fff" }} />
-            <MoreVertOutlinedIcon sx={{ width: 16, color: "#fff" }} />
-          </Stack>
-
-          <Stack alignItems="center" spacing={1} height="100%" paddingTop={1}>
-            <CreatorSVG iconName={icon} />
-            <StyledTypography
-              fontSize={16}
-              fontWeight={typography.fontWeightMedium}
-              color={palette.common.white}
-              lineHeight="24px"
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              visibility={!isPrivate ? "hidden" : "visible"}
             >
-              {title} {id}
-            </StyledTypography>
-          </Stack>
-        </CardActionArea>
-      </Card>
+              <LockOutlinedIcon sx={{ width: 16, color: "#fff" }} />
+              <MoreVertOutlinedIcon sx={{ width: 16, color: "#fff" }} />
+            </Stack>
+
+            <Stack alignItems="center" spacing={1} height="100%" paddingTop={1}>
+              <CreatorSVG iconName={icon} />
+              <StyledTypography
+                fontSize={16}
+                fontWeight={typography.fontWeightMedium}
+                color={palette.common.white}
+                lineHeight="24px"
+              >
+                {title} {id}
+              </StyledTypography>
+            </Stack>
+          </CardActionArea>
+        </Card>
+      </Link>
     </Tooltip>
   );
 };

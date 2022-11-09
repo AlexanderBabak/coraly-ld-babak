@@ -14,13 +14,13 @@ export const pages = [
   {
     name: "modelli",
     displayName: "Modelli",
-    path: "/processi",
+    path: "/modelli",
     iconName: "Modelli",
   },
   {
     name: "database",
     displayName: "Database",
-    path: "/processi",
+    path: "/database",
     iconName: "Database",
   },
   {

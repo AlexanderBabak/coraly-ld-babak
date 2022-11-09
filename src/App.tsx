@@ -1,3 +1,4 @@
+import AppLayout from "components/layouts/AppLayout";
 import { Routes, Route } from "react-router-dom";
 import { LoginPage } from "./modules/auth/login/LoginPage";
 import { RegisterPage } from "modules/auth/registration/RegisterPage";
@@ -11,12 +12,16 @@ import { TermsConditionsPage } from "modules/auth/registration/TermsConditionsPa
 import { AuthProvider, UserProvider } from "routes/AuthProvider";
 import { RegisterLayout } from "components/layouts/RegisterLayout";
 import { ResetLayout } from "components/layouts/ResetLayout";
-import AppLayout from "components/layouts/AppLayout";
 import { ProcessPage } from "modules/process/processCommon/ProcessPage";
-import "assets/styles/App.css";
 import { TeamPage } from "modules/team/TeamPage";
 import { ProcessItemPage } from "modules/process/processItem/ProcessItemPage";
-import { ToolbarStyled } from "modules/process/processItem/toolbar/Toolbar";
+import { ModelliPage } from "modules/modelli/ModelliPage";
+import { DatabasePage } from "modules/database/DatabasePage";
+import { MacroFasiPage } from "modules/macroFasi/MacroFasi";
+import { AutomazioniPage } from "modules/automazioni/AutomazioniPage";
+import { VenditoriPage } from "modules/venditori/VenditoriPage";
+import { SupportoPage } from "modules/supporto/SupportoPage";
+import "assets/styles/App.css";
 
 export function App() {
   return (
@@ -42,6 +47,12 @@ export function App() {
             <Route path="processi" element={<ProcessPage />} />
             <Route path="processi/process1" element={<ProcessItemPage />} />
             <Route path="team" element={<TeamPage />} />
+            <Route path="modelli" element={<ModelliPage />} />
+            <Route path="database" element={<DatabasePage />} />
+            <Route path="macroFasi" element={<MacroFasiPage />} />
+            <Route path="automazioni" element={<AutomazioniPage />} />
+            <Route path="venditori" element={<VenditoriPage />} />
+            <Route path="supporto" element={<SupportoPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Route>
