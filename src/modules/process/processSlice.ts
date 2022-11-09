@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ICard, IPage } from "api/process/processDto";
-import { getCardsThunk } from "modules/process/processThunk";
+import { ICard, IPage, ITableData } from "api/process/processDto";
+import { getCardsThunk, getTableDataThunk } from "modules/process/processThunk";
 
 interface pagesState {
   loadingCards: boolean;
@@ -9,6 +9,9 @@ interface pagesState {
   processCards: ICard[];
   isDrawerOpen: boolean;
   isCardOpen: boolean;
+  tableData: ITableData[];
+  loadingTableData: boolean;
+  errorTableData: string | undefined;
 }
 
 const initialState: pagesState = {
@@ -18,6 +21,9 @@ const initialState: pagesState = {
   processCards: [],
   isDrawerOpen: false,
   isCardOpen: false,
+  tableData: [],
+  loadingTableData: false,
+  errorTableData: undefined,
 };
 
 export const pagesSlice = createSlice({
@@ -47,6 +53,19 @@ export const pagesSlice = createSlice({
     builder.addCase(getCardsThunk.rejected, (state, action) => {
       state.loadingCards = false;
       state.errorCards = action.error.message;
+    });
+    // getTableData
+    builder.addCase(getTableDataThunk.pending, (state) => {
+      state.loadingTableData = true;
+      state.errorTableData = "";
+    });
+    builder.addCase(getTableDataThunk.fulfilled, (state, action) => {
+      state.loadingTableData = false;
+      state.tableData = action.payload;
+    });
+    builder.addCase(getTableDataThunk.rejected, (state, action) => {
+      state.loadingTableData = false;
+      state.errorTableData = action.error.message;
     });
   },
 });

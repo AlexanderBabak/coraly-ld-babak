@@ -1,71 +1,113 @@
 import {
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableRow,
-  Avatar,
   Stack,
+  Container,
+  Toolbar,
+  IconButton,
   useTheme,
+  Chip,
 } from "@mui/material";
-import React from "react";
+import { AppBarStyled } from "components/appBar/AppBarStyled";
+import { useAppSelector } from "redux/reduxType";
+import { ProcessItemTable } from "./ProcessItemTable";
+import { Card } from "../card/Card";
+import { CreatorSVG } from "components/сreatorSVG/CreatorSVG";
+import { StyledTypography } from "components/reusable";
+import { ButtonAdd } from "components/buttonAdd/ButtonAdd";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 
-//data должна фечиться с сервера!!!
-import { data } from "./data";
-
-export const ProcessItemTable = () => {
-  const { palette } = useTheme();
+export const Table = () => {
+  const { isDrawerOpen, isCardOpen } = useAppSelector((state) => state.pages);
+  const { palette, typography } = useTheme();
 
   const styles = {
-    tableContainer: { boxShadow: "none" },
-    row: {
-      "& td, & th": {
-        borderTop: "1px solid #EAEAEC",
-        borderRight: "2px solid #EAEAEC",
-        lineHeight: "18px",
-        padding: "9px 6px",
+    appBar: {
+      top: 132,
+      background: "#F6F8FA",
+      border: "none",
+      "& .MuiToolbar-root": { padding: "0 20px 0 10px" },
+    },
+    schede: {
+      bgcolor: "#D6D5D9",
+      borderRadius: "4px",
+      color: palette.info.main,
+      width: 63,
+      height: 22,
+      fontSize: 12,
+      fontWeight: typography.fontWeightMedium,
+      lineHeight: "16px",
+      "& .MuiChip-label": {
+        padding: 0,
       },
     },
-    cellOne: { width: 64 },
-    cellTwo: { width: 310 },
-    avatar: {
-      width: 24,
-      height: 24,
-      backgroundColor: palette.info.main,
-      fontSize: 8,
-      marginRight: 1,
+
+    firstNumber: {
+      bgcolor: "#FFE8DA",
+      borderRadius: "4px",
+      color: palette.error.main,
+      width: 22,
+      height: 22,
+      fontSize: 12,
+      fontWeight: typography.fontWeightMedium,
+      lineHeight: "16px",
+      "& .MuiChip-label": {
+        padding: 0,
+      },
+    },
+    secondNumber: {
+      bgcolor: "#FEF4DE",
+      borderRadius: "4px",
+      color: palette.warning.main,
+      width: 22,
+      height: 22,
+      fontSize: 12,
+      fontWeight: typography.fontWeightMedium,
+      lineHeight: "16px",
+      "& .MuiChip-label": {
+        padding: 0,
+      },
     },
   };
-  return (
-    <TableContainer component={Paper} sx={styles.tableContainer}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableBody>
-          {data.map((user) => (
-            <TableRow key={user.serie} sx={styles.row}>
-              <TableCell
-                component="th"
-                scope="row"
-                sx={styles.cellOne}
-              ></TableCell>
-              <TableCell align="left"> {user.code}</TableCell>
-              <TableCell align="left" sx={styles.cellTwo}>
-                {user.name}
-              </TableCell>
-              <TableCell align="left">{user.phoneNumber}</TableCell>
-              <TableCell align="left">{user.serie}</TableCell>
-              <TableCell>
-                <Stack flexDirection="row" alignItems="center">
-                  <Avatar sx={styles.avatar}>PL</Avatar>
-                  {user.venditore}
-                </Stack>
-              </TableCell>
 
-              <TableCell align="left">{user.date}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+  return (
+    <AppBarStyled
+      position="fixed"
+      open={isDrawerOpen}
+      role={"app-bar"}
+      sx={styles.appBar}
+    >
+      <>
+        <Container disableGutters maxWidth="xl">
+          <Toolbar>
+            <Stack direction="row" alignItems="center" spacing={1}>
+              <IconButton disableFocusRipple size="small">
+                <ExpandMoreOutlinedIcon color="disabled" />
+              </IconButton>
+              <IconButton disableFocusRipple size="small">
+                <CreatorSVG iconName={"Start"} color={palette.primary.main} />
+              </IconButton>
+              <StyledTypography
+                fontSize={typography.fontSize}
+                fontWeight={typography.fontWeightMedium}
+                lineHeight="18px"
+                color={palette.text.primary}
+              >
+                New Contract
+              </StyledTypography>
+              <Chip label="8 Schede" sx={styles.schede} />
+              <Chip label="1" sx={styles.firstNumber} />
+              <Chip label="2" sx={styles.secondNumber} />
+              <ButtonAdd />
+              <IconButton disableFocusRipple size="small">
+                <MoreHorizIcon color="disabled" />
+              </IconButton>
+            </Stack>
+          </Toolbar>
+        </Container>
+        <ProcessItemTable />
+      </>
+
+      {isCardOpen && <Card />}
+    </AppBarStyled>
   );
 };

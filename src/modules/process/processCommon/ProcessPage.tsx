@@ -6,7 +6,6 @@ import { Stack, useTheme, Grid, CircularProgress } from "@mui/material";
 import { getCardsThunk } from "../processThunk";
 import { ProcessCard } from "./processCard/ProcessCard";
 import { CreateProcessCard } from "./processCard/CreateProcessCard";
-
 import { ModalCreateProcess } from "./modal/ModalCreateProcess";
 
 export const ProcessPage = () => {

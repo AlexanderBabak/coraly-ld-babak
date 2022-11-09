@@ -1,12 +1,11 @@
-import React from "react";
-import { SubToolbar } from "./subToolbar/SubToolbar";
+import { Table } from "./table/Table";
 import { ToolbarStyled } from "./toolbar/Toolbar";
 
 export const ProcessItemPage = () => {
   return (
     <>
       <ToolbarStyled />
-      <SubToolbar />
+      <Table />
     </>
   );
 };
