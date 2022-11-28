@@ -28,10 +28,11 @@ type Props = {
 };
 
 export const Drawer: React.FC<Props> = ({ open, onClose, pages }) => {
-  const { palette } = useTheme();
   const { user } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+
+  const { palette } = useTheme();
 
   const styles = {
     link: {
