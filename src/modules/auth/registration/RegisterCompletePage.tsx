@@ -22,7 +22,7 @@ export const RegisterCompletePage = () => {
 
   const onSubmit: CompleteSubmitProps = ({ password }) => {
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email!, password)
       .then(() => {
         setErrorlogin(false);
         setOpenSnackbar(true);
